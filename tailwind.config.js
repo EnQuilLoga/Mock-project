@@ -5,7 +5,13 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      width: {
+        'submenu-md': '500px',
+        'submenu-lg': '700px',
+        'submenu-xl': '900px',
+      }
+    },
   },
   plugins: [],
 }
