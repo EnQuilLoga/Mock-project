@@ -1,0 +1,20 @@
+.mainProduct{    
+    color: #000;
+    text-align: center;
+}
+
+.content {    
+    align-items: center;
+    color: red;
+}
+
+.button{
+    border: solid 2px red;
+    border-radius: 3px;
+    margin: 3px; 
+    padding: 2px 5px;   
+}
+
+.product{
+    border: solid 1px red;
+}
