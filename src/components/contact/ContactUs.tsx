@@ -7,34 +7,36 @@ return (
     <div className="">
         <div className="container flex flex-wrap"> 
             <div className="left">
-                <div className="" >
+                <div className="mx-20" >
                     <h4 className="text-2xl font-semibold">Store Information</h4>
-                    <div className="flex">
-                        <div>
-                            <i className="fas fa-map-marker-alt"></i>
+                    <div className="mx-20">
+                        <div className="flex">
+                            <div>
+                                <i className="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>Junno Responsive Prestashop Theme United States</div>
                         </div>
-                        <div>Junno Responsive Prestashop Theme United States</div>
-                    </div>
-                    <hr/>
-                    <div className="flex">
-                        <div>
-                            <i className="fas fa-phone-alt"></i>
+                        <hr/>
+                        <div className="flex">
+                            <div>
+                                <i className="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                Call us: 
+                                <br />
+                                <a href="tel: (+84)123456789">(+84)0123456789</a>
+                            </div>
                         </div>
-                        <div>
-                            Call us: 
-                            <br />
-                            <a href="tel: (+84)123456789">(+84)0123456789</a>
-                        </div>
-                    </div>
-                    <hr/>
-                    <div className="flex">
-                        <div>
-                            <i className="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            Email us:
-                            <br />
-                            <a href="mailto: abc@gmail.com">abc@gmail.com</a>
+                        <hr/>
+                        <div className="flex">
+                            <div>
+                                <i className="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                Email us:
+                                <br />
+                                <a href="mailto: abc@gmail.com">abc@gmail.com</a>
+                            </div>
                         </div>
                     </div>
                 </div>
