@@ -1,4 +1,5 @@
 import { colors } from "@mui/material";
+import { error } from "console";
 import React from "react";
 import { Fragment } from "react";
 
@@ -55,9 +56,9 @@ export class LoginForm extends React.Component {
 
     handlePasswordChange=(event: React.ChangeEvent<HTMLInputElement>) =>{
         this.setState({password: event.target.value}, () =>{
-            if(this.state.password.length<4 || this.state.password.length >10){
+            if(this.state.password.length<6 || this.state.password.length >10){
                 this.setState({
-                    errorPassword: "Password length must be between 4 and 10 characters"
+                    errorPassword: "Password length must be between 6 and 10 characters"
                 })
             }
         })
@@ -79,21 +80,21 @@ export class LoginForm extends React.Component {
             <Fragment>
                 
             <div className="mt-10 px-96 ">
-                <h2 className="text-center text-4xl text-indigo-900 font-display font-semibold lg:text-left xl:text-5xl xl:text-bold">Sign In</h2>
+                <h2 className="text-center text-4xl text-indigo-900 font-display font-semibold xl:text-5xl ">Sign In</h2>
                 <form className="mt-12" autoComplete="off" onSubmit={this.handleSubmit}>
                
                 <div className="form-group">
                     <label htmlFor="email-address" className="text-sm font-bold text-gray-700 tracking-wide">Email Address</label>
                     <input type="email" 
                     id="email-address"
-                    className={`form-control ${this.state.errorEmail ? "is-invalid": "w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500"}`} 
-                    // className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500"
+                    className={`form-control w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500 ${this.state.errorEmail ? "is-invalid": ""}`} 
+        
                     placeholder="Enter email"
                     autoComplete="email-address"
                     value={this.state.emailAddress}
                     onChange={this.handleEmailAddressChange}
                     />  
-                    {this.state.errorEmail && ( <div className="text-danger">{this.state.errorEmail}</div> )}
+                    {this.state.errorEmail && ( <div className="text-red-500">{this.state.errorEmail}</div> )}
                 </div>
 
                 
@@ -101,12 +102,12 @@ export class LoginForm extends React.Component {
                     <label htmlFor="current-password" className="text-sm font-bold text-gray-700 tracking-wide">Password</label>
                     <input type={this.state.showPassword ? "text" : "password"} 
                     id="current-password"
-                    className={`form-control ${this.state.errorPassword ? "is-invalid": "w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500"}`}
+                    className={`form-control w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500 ${this.state.errorPassword ? "is-invalid": ""}`}
                     placeholder="Enter password"
                     value={this.state.password}
                     onChange={this.handlePasswordChange}
                     />
-                    {this.state.errorPassword && ( <div className="text-danger">{this.state.errorPassword}</div> )}
+                    {this.state.errorPassword && ( <div className="text-red-500">{this.state.errorPassword}</div>)}
                     
                 </div>
 
