@@ -13,8 +13,8 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/login" element={<ReactForm />}></Route>
       </Routes>
+      <Footer />
     </div>
-    
   );
 }
 
