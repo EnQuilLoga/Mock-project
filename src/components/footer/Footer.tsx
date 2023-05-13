@@ -118,7 +118,7 @@ export default function Footer(props: IFooterProps) {
                   Sign Up
                 </button>
               </div>
-              <div className="flex">
+              <div className="flex justify-center md:justify-normal">
                 <div className="mr-4">
                   <img src={appStore} alt="App Store" />
                 </div>
@@ -131,12 +131,12 @@ export default function Footer(props: IFooterProps) {
         </div>
       </div>
       <div className="footer-bottom pb-20">
-        <div className="container mx-auto grid grid-cols-12">
-          <div className="col-span-4">
+        <div className="container mx-auto grid grid-cols-12 grid-">
+          <div className="col-span-12 mb-5 md:col-span-4 text-center">
             <p>Copyright &copy; Rau Câu Team 💪😎🤳. All Rights Reserved</p>
           </div>
-          <div className="col-span-8">
-            <img src={payment} alt="payments" className="cursor-pointer" />
+          <div className="col-span-12 mb-5 md:col-span-8">
+            <img src={payment} alt="payments" className="cursor-pointer mx-auto" />
           </div>
         </div>
       </div>
