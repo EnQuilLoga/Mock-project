@@ -3,10 +3,9 @@ import { Route, Routes } from "react-router-dom";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import Home from "./components/home/Home";
-import ReactForm from "./components/login/ReactForm";
-import Product from "./components/product/product";
 import LoginForm from "./components/login/LoginForm";
 import RegisterForm from "./components/login/RegisterForm";
+import ProductDetail from "./components/productDetail/ProductDetail";
 
 function App() {
   return (
