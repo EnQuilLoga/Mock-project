@@ -7,8 +7,8 @@ export interface IHomeProps {}
 export default function Home(props: IHomeProps) {
   return (
     <div>
-      {/* <ContactUs /> */}
-      <AboutUs />
+      <ContactUs />
+      {/* <AboutUs /> */}
     </div>
   );
 }
