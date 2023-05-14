@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { IUser } from "../../types/userType";
-import { useState } from "react";;
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const LoginForm = () =>{

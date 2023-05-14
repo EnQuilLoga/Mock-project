@@ -4,7 +4,9 @@ import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import Home from "./components/home/Home";
 import ReactForm from "./components/login/ReactForm";
-import ProductDetail from "./components/productDetail/ProductDetail";
+import Product from "./components/product/product";
+import LoginForm from "./components/login/LoginForm";
+import RegisterForm from "./components/login/RegisterForm";
 
 function App() {
   return (
@@ -13,7 +15,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
 
-        <Route path="/login" element={<ReactForm />}></Route>
+        <Route path="/login" element={<LoginForm />}></Route>
+
+        <Route path="/register" element={<RegisterForm />}></Route>
 
         <Route path="/product" element={<ProductDetail />} />
       </Routes>
