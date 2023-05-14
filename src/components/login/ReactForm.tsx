@@ -1,6 +1,7 @@
 import { Route, Routes} from "react-router-dom"
 import { BrowserRouter } from "react-router-dom"
-import { LoginForm } from "./LoginForm"
+import RegisterForm from "./RegisterForm"
+import LoginForm from "./LoginForm"
 
 
 const  ReactForm = () =>{
@@ -8,7 +9,8 @@ const  ReactForm = () =>{
        
         <div className="container">
             <Routes>
-              <Route path="/" element={<LoginForm/>}/>
+                <Route path="/register" element={<RegisterForm />}></Route>
+                <Route path="/login" element={<LoginForm />}></Route>
             </Routes>
         </div>
        
