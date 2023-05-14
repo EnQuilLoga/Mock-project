@@ -4,7 +4,7 @@ import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import Home from "./components/home/Home";
 import ReactForm from "./components/login/ReactForm";
-import Product from "./components/product/product";
+import ProductDetail from "./components/productDetail/ProductDetail";
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
 
         <Route path="/login" element={<ReactForm />}></Route>
 
-        <Route path="/product" element={<Product />} />
+        <Route path="/product" element={<ProductDetail />} />
       </Routes>
       <Footer />
     </div>
