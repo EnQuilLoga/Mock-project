@@ -9,8 +9,8 @@ const  ReactForm = () =>{
        
         <div className="container">
             <Routes>
-                <Route path="/register" element={<RegisterForm />}></Route>
-                <Route path="/login" element={<LoginForm />}></Route>
+                {/* <Route path="/register" element={<RegisterForm />}></Route> */}
+                {/* <Route path="/login" element={<LoginForm />}></Route> */}
             </Routes>
         </div>
        
