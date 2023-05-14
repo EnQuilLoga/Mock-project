@@ -1,5 +1,5 @@
 import * as React from "react";
-import Product from "../product/product";
+import Product from "../productDetail/ProductDetail";
 import ProductDemo from "../product-demo/productDemo";
 
 export interface IHomeProps {}
