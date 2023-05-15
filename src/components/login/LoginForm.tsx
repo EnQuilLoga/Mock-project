@@ -9,8 +9,9 @@ const LoginForm = () =>{
     );
     const [showPassword, setShowPassword] = useState(false);
     const onSubmit = (data: any) => {
-        alert(JSON.stringify(data));
-        console.log(watch(data));
+        alert("Login successfully");
+        // alert(JSON.stringify(data));
+        // console.log(watch(data));
     }
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
@@ -41,7 +42,7 @@ const LoginForm = () =>{
                 <input className='shadow appearance-none border rounded-2xl w-full py-2.5 px-3 mb-1 text-gray-700 leading-tight focus:outline-none' type="text" id="username" placeholder='Username'
                 {...register("username", {
                     required: true,
-                    pattern: /^[A-Z0-9._%+-]+$/i 
+                    pattern: /^[A-Z0-9._%+-]{6,}$/i 
                 })}/>
                 {errors?.username?.type === "pattern" && (<p className='text-red-500'>Username only have "._%+-" special character</p>)}
                 {errors?.username?.type === "required" && (<p className='text-red-500'>Username is required</p>)}
