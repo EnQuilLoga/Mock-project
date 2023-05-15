@@ -15,12 +15,12 @@ import { IProduct } from "../../types/productType";
 
 export default function Product1(props: Partial<IProduct>) {
  return (
-    <div className="mr-6 ml-9 ">
+    <div className="mr-6 ml-9 group">
         <div className="">
             <div className="w-40 h-40 justify-center"><img src={props.image} alt="" className="w-full h-full object-contain"/></div>
-            <div className="group hidden">
-                <div className=" flex-auto items-center hover:bg-white">
-                    <button className="hover:p-1.5 hover:border-2 hover: border-slate-100 hover:rounded-full hover: bg-white hover:bg-red-400 "><i className="fas fa-heart"></i></button>
+            <div className="">    
+                <div className=" flex-auto items-center hidden group-hover:block">
+                    <button className="p-1.5 border-2 border-slate-100 rounded-full  bg-white hover:bg-red-400 "><i className="fas fa-heart"></i></button>
                     <button className="p-1.5 border-2 border-slate-100 rounded-full  bg-white hover:bg-red-400 "><i className="fas fa-random"></i></button>
                     <button className="p-1.5 border-2 border-slate-100 rounded-full  bg-white hover:bg-red-400 "><i className="fas fa-search"></i></button>
                 </div>
