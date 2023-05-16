@@ -4,8 +4,8 @@ export interface IContactUsProps {
 }
 export default function ContactUs (props: IContactUsProps) {
 return (
-    <div className="container m-auto">
-        <div className=" flex flex-wrap"> 
+    <div className="container m-auto ">
+        <div className=" flex flex-wrap mx-10"> 
             {/* Store */}
             <div className="store sm:w-full lg:w-1/4 ">
                 <div className="px-4" >
@@ -47,16 +47,16 @@ return (
             </div>
 
             {/* Contact */}
-            <div className="contact sm:w-full sm:mt-16  lg:w-3/4">
+            <div className="contact sm:w-full sm:mt-16 lg:mt-0 lg:px-5 lg:w-3/4">
                 <div className="px-4">
                     <div>
                         <h3 className="text-2xl font-semibold mb-8">Contact Us</h3>
                     </div>
                     <div  className="font-light">
                          {/* Subject */}
-                        <div className="flex mb-4 ">
+                        <div className="lg:flex mb-4 ">
                             <label className="text-left w-1/4">Subject</label>
-                            <div className=" w-1/2 border">
+                            <div className=" sm:w-full sm:mt-3 lg:w-1/2 lg:mt-0 border-2">
                                 <select name="" id="" className="w-full py-2 px-4">
                                 <option value="" className="" >Customer service</option>
                                 <option value="" className="">Webmaster</option> 
@@ -65,26 +65,26 @@ return (
                         </div>
 
                         {/* Email */}
-                        <div className="flex mb-4">
+                        <div className="lg:flex mb-4">
                             <label className="text-left w-1/4">Email address</label>
-                            <div className=" w-1/2 border">
+                            <div className=" sm:w-full sm:mt-3 lg:w-1/2 lg:mt-0 border-2">
                                 <input type="email" placeholder="your@email.com" className="w-full py-2 px-4" />
                             </div>
                         </div>
 
                         {/* Attachment */}
-                        <div className="flex mb-4">
+                        <div className="lg:flex mb-4">
                             <label className="text-left w-1/4">Attachment</label>
-                            <div className=" w-1/2 border">
+                            <div className=" sm:w-full sm:mt-3 lg:w-1/2 lg:mt-0 border-2">
                                 <input type="file" name="file" className="w-full "/>
                             </div>
                         </div>  
 
                         {/* Message */}
-                        <div className="flex mb-4"> 
+                        <div className="lg:flex mb-4"> 
                             <label className="text-left w-1/4">Message</label>
-                            <div className=" w-1/2 border">
-                                <textarea name="" id="" placeholder="How can hlep you???" className="w-full"></textarea>
+                            <div className=" sm:w-full sm:mt-3 lg:w-3/4 lg:mt-0 border-2">
+                                <textarea name="" id="" placeholder="How can hlep you???" className="w-full py-2 px-4"></textarea>
                             </div>
                         </div>
 
