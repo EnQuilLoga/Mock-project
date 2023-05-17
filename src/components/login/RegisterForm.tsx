@@ -10,8 +10,9 @@ const RegisterForm = () => {
     );
     const [showPassword, setShowPassword] = useState(false);
     const onSubmit = (data: any) => {
-        alert(JSON.stringify(data));
-        console.log(watch(data));
+        alert("Register successfully")
+        // alert(JSON.stringify(data));
+        // console.log(watch(data));
     }
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
@@ -21,7 +22,7 @@ const RegisterForm = () => {
 
   return (
     <>
-    <div className="bg-indigo-700 bg-opacity-25 p-1 h-screen ">
+    <div className="bg-indigo-700 bg-opacity-25 p-1  ">
     <div className="mt-20 px-96 " >
     <h2 className="text-center text-7xl text-indigo-900 font-semibold  ">Register</h2>
     <h3 className="text-center text-3xl text-indigo-800 font-semibold pt-4">Welcome to Junno</h3>
@@ -80,7 +81,7 @@ const RegisterForm = () => {
                 <input className='shadow appearance-none border rounded-2xl w-full py-2.5 px-3 mb-1 text-gray-700 leading-tight focus:outline-none' type="text" id="username" placeholder='Username'
                 {...register("username", {
                     required: true,
-                    pattern: /^[A-Z0-9._%+-]+$/i 
+                    pattern: /^[A-Z0-9._%+-]{6,}$/i 
                 })}/>
                 {errors?.username?.type === "pattern" && (<p className='text-red-500'>Username only have "._%+-" special character</p>)}
                 {errors?.username?.type === "required" && (<p className='text-red-500'>Username is required</p>)}
@@ -122,7 +123,7 @@ const RegisterForm = () => {
            
             </div>
 
-            <button type='submit' className='bg-indigo-500 text-gray-100 text-2xl p-3 mt-12 w-full rounded-full tracking-wide
+            <button type='submit' className='bg-indigo-500 text-gray-100 text-2xl p-3 mt-12 mb-24 w-full rounded-full tracking-wide
                     font-semibold focus:outline-none focus:shadow-outline hover:bg-indigo-600
                     shadow-lg"'>Submit</button>
         </form>
