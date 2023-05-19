@@ -57,19 +57,6 @@ const LoginForm = () =>{
                 {errors?.password?.type === "pattern" && (<p className='text-red-500'>Your password must contains at least 8 characters, including at least one number, uppercase letters and special characters</p>)}
                 {errors?.password?.type === "required" && (<p className='text-red-500'>Password is required</p>)}
             
-                {/* Comfirm password  */}
-                <label className='uppercase text-sm font-bold text-gray-700 my-2 tracking-wide'>Confirm password</label>
-                <input className='shadow appearance-none border rounded-2xl w-full py-2.5 px-3 mb-1 text-gray-700 leading-tight focus:outline-none' type={showPassword ? 'text' : 'password'} id="repassword" placeholder='********'
-                {...register("comfirmPassword", {
-                    required: true,
-                    validate: (val) =>{
-                    if(watch('password') !== val) {
-                        return `${<p className='text-red-500'>Your confirm password do not match with your password</p>}`
-                    }
-                 }
-                })}/>
-                {errors?.comfirmPassword?.type === "validate" && (<p className='text-red-500'>Your confirm password do not match with your password</p>)}
-                {errors?.comfirmPassword?.type === "required" && (<p className='text-red-500'>Re type your password.</p>)}
 
                 <div>
                 <input

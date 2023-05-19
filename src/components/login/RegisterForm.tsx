@@ -93,7 +93,7 @@ const RegisterForm = () => {
                     required: true,
                     pattern: /^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[\d]){1,})(?=(.*[\W]){1,})(?!.*\s).{8,}$/i
                 })}/>
-                {errors?.password?.type === "pattern" && (<p className='text-red-500'>Your password must contains at least 8 characters, including at least one number, uppercase letters and special characters</p>)}
+                {errors?.password?.type === "pattern" && (<p className='text-red-500'>Your password must contains at least 8 characters, including at least one number, special characters</p>)}
                 {errors?.password?.type === "required" && (<p className='text-red-500'>Password is required</p>)}
             
                 {/* Comfirm password  */}
