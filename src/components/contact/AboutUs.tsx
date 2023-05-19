@@ -1,9 +1,9 @@
 import React from "react";
-import cms from "../../assets/cms-img (1).jpg"
-export interface IContactUsProps {
+import cms from "../../assets/jordan.jpg"
+export interface IAboutUsProps {
 
 }
-export default function ContactUs (props: IContactUsProps) {
+export default function AboutUs (props: IAboutUsProps) {
 return (
         <div className="container mx-auto">
             <div className="">
@@ -12,7 +12,6 @@ return (
                         <h1 className="px-2 text-2xl capitalize font-medium">About us</h1>
                     </header>
                     <div className="py-4 text-justify">
-                        <h2 className="px-2 capitalize font-medium">About us</h2>
                         <div className="flex flex-wrap">
 
                             {/* Our company */}
@@ -20,16 +19,23 @@ return (
                                 <div>
                                     <h3 className="capitalize font-medium mb-2">Our company</h3>
                                     <div className="text-sm font-light">
-                                    <p>
+                                    <p className="mb-2 italic underline">
                                         <strong>
-                                        Lorem ipsum dolor sit amet conse ctetur adipisicing elit, 
-                                        sed do eiusmod tempor incididun.
+                                        After opening its Milan flagship store late last year, 
+                                        Jordan Brand has revealed its debut World of Flight location in Tokyo.
                                         </strong>
                                     </p>
                                     <p>
-                                        Lorem ipsum dolor sit amet conse ctetur adipisicing elit, 
-                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                                        Ut enim ad minim veniam. Lorem ipsum dolor sit amet conse ctetur adipisicing elit.
+                                        The first-of-its-kind retail destination is encapsulated by endless 
+                                        asketball culture as Michael Jordan and Nike (NYSE:NKE +1.62%) continue 
+                                        to refine the physical shopping experience.
+                                    </p>
+                                    <p>
+                                        Opening its doors on March 25, it continues the imprint’s 
+                                        community-first mentality packed with artwork by local artists that study the city’s 
+                                        deep athletic knowledge. Furthermore, Tokyo-based footwear collectors display their 
+                                        collections throughout the store, debuting Nike’s progressive Membership program through new 
+                                        content creation studios and product customization venues.
                                     </p>
                                     <ul>
                                         <li>Top quality products</li>
@@ -45,18 +51,17 @@ return (
                                 <div>
                                     <h3 className="capitalize font-medium mb-2">Our team</h3>
                                     <div className="text-sm font-light">
-                                    <div className="w-full">
+                                    <div className="w-full mb-4">
                                         <img src={cms} alt="" className="w-full h-full object-contain"/>           
                                     </div>
-                                    
-                                    <p>
+                                    <p className="mb-2 italic underline">
                                         <strong>
-                                            Lorem set sint occaecat cupidatat non 
+                                            Jordan Brand Opens Doors to World of Flight Store in Shibuya, Tokyo.
                                         </strong>
                                     </p>
                                     <p>
-                                        Eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+                                        Located in Shibuya, the 9,200-square-foot space is the largest World of 
+                                        Flight store to date and pays tribute to Jordan Brand’s undeniable foothold on basketball culture.
                                     </p>
                                     </div>
                                 </div>
@@ -69,25 +74,28 @@ return (
                                    <div className="text-sm font-light">
                                    <div>
                                         <p>
-                                        Lorem ipsum dolor sit amet conse ctetur adipisicing elit, 
-                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                                        Ut enim ad minim.
+                                        The ultra-modern building welcomes shoppers through an 
+                                        NBA-style gateway that mimics court-entry arena portals, 
+                                        leading into an exclusive Members Lounge decorated with 
+                                        Jordan memorabilia. In addition, World of Flight offers 
+                                        an extensive selection of men’s, women’s, and kid’s footwear 
+                                        and apparel options. Nike’s essential SNKRS pick-up facilities 
+                                        are also available for limited launches throughout the year.
                                         </p>
                                     </div>
-                                    <p>
+                                    <p className="my-2 italic underline">
                                         <strong>
                                         Lorem ipsum dolor sit
                                         </strong>
                                     </p>
                                     <div>
                                         <p>
-                                        Excepteur sint occaecat cupidatat non proident, 
-                                        sunt in culpa qui officia deserunt mollit anim id est laborum. 
-                                        Lorem ipsum dolor sit amet conse ctetur adipisicing elit. 
-                                        Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod.
+                                        Take a look inside Jordan Brand’s World of Flight flagship store 
+                                        in the gallery above and visit the space on March 25 at Meiji Dori 
+                                        Street in Shibuya, Tokyo.
                                         </p>
                                     </div>
-                                    <p>
+                                    <p className="mt-2 italic underline">
                                         <strong>
                                             Ipsum dolor sit
                                         </strong>
