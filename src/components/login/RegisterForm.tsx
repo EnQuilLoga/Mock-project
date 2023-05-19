@@ -68,7 +68,7 @@ const RegisterForm = () => {
                 
                 {/* Phone Number  */}
                 <label className='block uppercase text-sm font-bold text-gray-700 my-2 tracking-wide'>Phone number</label>
-                <input className='shadow appearance-none border rounded-2xl w-full py-2.5 px-3 mb-1 text-gray-700 leading-tight focus:outline-none' type="text" id="username" placeholder='Phone number'
+                <input className='shadow appearance-none border rounded-2xl w-full py-2.5 px-3 mb-1 text-gray-700 leading-tight focus:outline-none' type="text" id="phonenumber" placeholder='Phone number'
                 {...register("phone", {
                     required: true,
                     pattern: /^(84|0[3|5|7|8|9])+([0-9]{8})\b$/i 
