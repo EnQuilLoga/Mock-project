@@ -13,6 +13,7 @@ export interface IUser {
   email: string;
   username: string;
   password: string;
+  comfirmPassword: string;
   name: {
     firstname: string;
     lastname: string;

@@ -1,4 +1,6 @@
 import * as React from "react";
+import Product from "../productDetail/ProductDetail";
+import ProductDemo from "../product-demo/productDemo";
 import ContactUs from "../contact/ContactUs";
 import AboutUs from "../contact/AboutUs";
 import LatestBlogs from "../Latest/LatestBlogs";
@@ -10,7 +12,6 @@ export default function Home(props: IHomeProps) {
     <div>
       {/* <ContactUs /> */}
       {/* <AboutUs /> */}
-      <LatestBlogs />
     </div>
   );
 }
