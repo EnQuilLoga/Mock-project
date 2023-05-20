@@ -48,7 +48,7 @@ export function renderCategoryFilter({
             <li
               key={i}
               onClick={() => handleCategory(item.value)}
-              className={` ${`bg-gray-200 ${
+              className={` ${` ${
                 selected === item.value ? " selected" : ""
               }`} p-2 border-t-2 border-stone-300 cursor-pointer `}
             >

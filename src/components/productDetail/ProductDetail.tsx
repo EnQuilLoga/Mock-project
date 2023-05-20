@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { Link, NavLink, useParams } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import { RootState } from "../../call-api/reducer";
-import { star } from "./product-list/smallData";
 import ProductDes from "./product-detail/ProductDes";
 import { des, imgs } from "./product-detail/data-small";
 import Description from "./product-detail/Description";
@@ -11,6 +10,9 @@ import Modal from "./product-detail/Modal";
 import Security from "./product-detail/Security";
 import SocialMedia from "./product-detail/SocialMedia";
 import ImageDisplay from "./product-detail/ImageDisplay";
+import { star } from "./product-list/smallData";
+import Slide from "./product-detail/Slide";
+import { ProductType } from "./product-list/Interface";
 
 export default function ProductDetail() {
   const param = useParams();
@@ -23,7 +25,9 @@ export default function ProductDetail() {
   const currentProduct = products?.find(
     (product) => product.id === Number(param.id)
   );
-
+  const filtered = products?.filter(
+    (p: ProductType) => p.category === currentProduct?.category
+  );
   const number = 10;
   const discount = Number(number) / Number(100);
 
@@ -156,9 +160,23 @@ export default function ProductDetail() {
           ) : null}
         </div>
         <div>
-          <div className="text-center mt-10">
-            <p className="text-[30px]">You Might Also Like </p>
-            <p>Add Related products to weekly line up </p>
+          {/* You Might Also Like  */}
+          <div>
+            <div className="text-center mt-10">
+              <p className="text-[30px]">You Might Also Like </p>
+              <p>Add Related products to weekly line up </p>
+            </div>
+
+            <Slide products={products} number={number} filtered={filtered} />
+          </div>
+          {/* Other Products   */}
+          <div>
+            <div className="text-center mt-10">
+              <p className="text-[30px]">Other Products </p>
+              <p>16 other products in the same category: </p>
+            </div>
+
+            <Slide products={products} number={number} filtered={filtered} />
           </div>
         </div>
       </div>

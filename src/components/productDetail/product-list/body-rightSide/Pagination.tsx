@@ -19,7 +19,7 @@ export default function Pagination({
             onClick={() => setPageIndex(number)}
             className={` ${
               pageIndex === number ? "selected" : ""
-            }  py-2 px-3  border-2 border-sky-500  cursor-pointer m-2 rounded`}
+            }  py-2 px-3  border-2 border-blue-500  cursor-pointer m-2 rounded`}
           >
             {number + 1}
           </div>

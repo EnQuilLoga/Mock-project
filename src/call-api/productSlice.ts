@@ -3,7 +3,7 @@ import {
     PayloadAction,
     SerializedError,
   } from "@reduxjs/toolkit";
-import { ProductType } from "../components/productDetail/Interface";
+import { ProductType } from "../components/productDetail/product-list/Interface";
 
   interface ProductState {
     isLoading: boolean;
