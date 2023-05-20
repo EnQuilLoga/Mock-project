@@ -6,17 +6,18 @@ export default function Slide({ products, filtered, number }: any) {
   const [pageIndex, setPageIndex] = useState(0);
 
   const handleNext = () => {
-    if (pageIndex < totalPages + 1) setPageIndex(pageIndex + 1);
-    if (pageIndex === totalPages) setPageIndex(pageIndex);
+    if (pageIndex < totalPages - 1) setPageIndex(pageIndex + 1);
   };
   const handlePrevious = () => {
     if (pageIndex > 0) setPageIndex(pageIndex - 1);
   };
 
   const pageSize = 4;
+
   const totalPages =
     Math.floor(filtered.length / pageSize) +
     (filtered.length % pageSize === 0 ? 0 : 1);
+
   const start = pageSize * pageIndex;
   const end = pageSize + start;
 
