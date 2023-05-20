@@ -15,6 +15,7 @@ import ImageDisplay from "./product-detail/ImageDisplay";
 export default function ProductDetail() {
   const param = useParams();
   const { products } = useSelector((state: RootState) => state.products);
+
   const [displayReview, setDisplayReview] = useState(false);
   const [displayDefaultDes, setDisplayDefaultDes] = useState(true);
   const [displayDes, setDisplayDes] = useState("");
@@ -164,6 +165,3 @@ export default function ProductDetail() {
     </>
   );
 }
-
-const icon =
-  "flex justify-center items-center w-8 h-8 bg-stone-200 cursor-pointer hover:bg-red-700 rounded-full hover:text-white";

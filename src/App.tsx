@@ -9,6 +9,7 @@ import ProductDetail from "./components/productDetail/ProductDetail";
 import ContactUs from "./components/contact/ContactUs";
 import AboutUs from "./components/contact/AboutUs";
 import Userinfo from "./components/user-Information/Userinfo";
+import ProductList from "./components/productDetail/ProductList";
 
 function App() {
   return (
@@ -19,11 +20,13 @@ function App() {
 
         <Route path="/login" element={<LoginForm />}></Route>
 
-        <Route path="/user-info" element={<Userinfo/>}></Route>
+        <Route path="/user-info" element={<Userinfo />}></Route>
 
         <Route path="/register" element={<RegisterForm />}></Route>
 
-        <Route path="/product" element={<ProductDetail />} />
+        <Route path="/products" element={<ProductList />} />
+        <Route path="/products/:id" element={<ProductDetail />} />
+
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/about-us" element={<AboutUs />} />
       </Routes>
