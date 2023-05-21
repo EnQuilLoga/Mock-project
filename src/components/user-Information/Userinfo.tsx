@@ -15,6 +15,7 @@ const Userinfo = () => {
         <div>
             <h2>Member Information</h2>
             <h2>Hi </h2>
+            <div className="mx-96 py-7 ">
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div>
                     {/* Email  */}
@@ -76,6 +77,7 @@ const Userinfo = () => {
 
                 </div>
             </form>
+            </div>
         </div>
     )
 } 
