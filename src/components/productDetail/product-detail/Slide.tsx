@@ -25,7 +25,7 @@ export default function Slide({ products, filtered, number }: any) {
 
   return (
     <>
-      <div className=" mt-10 relative">
+      <div className=" mt-10 relative pb-5">
         <div className="flex justify-around items-center ">
           {products.length > 0 &&
             relatedProducts.map((product: ProductType) => (
@@ -38,7 +38,7 @@ export default function Slide({ products, filtered, number }: any) {
             onClick={handlePrevious}
             className={` ${
               pageIndex === 0
-                ? "bg-stone-100 cursor-default hover:bg-stone-100 hover:text-black"
+                ? "text-stone-100 cursor-auto hover:bg-stone-200"
                 : ""
             } bg-stone-300 text-[16px] px-4 py-2 rounded-full hover:bg-red-600 hover:text-white cursor-pointer`}
           >
@@ -47,8 +47,8 @@ export default function Slide({ products, filtered, number }: any) {
           <div
             onClick={handleNext}
             className={`${
-              pageIndex === filtered.length - 1
-                ? "bg-stone-100 cursor-default"
+              pageIndex === totalPages - 1
+                ? "text-stone-100 cursor-auto hover:bg-stone-200 "
                 : ""
             }  bg-stone-300 text-[16px] px-4 py-2 rounded-full hover:bg-red-600 hover:text-white cursor-pointer`}
           >

@@ -21,3 +21,14 @@ code {
   background-color: blue;
   color: white;
 }
+.dis-active {
+  border-bottom: 2px solid red;
+}
+.border-shoes:hover {
+  border: 1px solid red;
+}
+
+.zoom:hover {
+  transition: ease-in-out;
+  transform: scale(1.5);
+}

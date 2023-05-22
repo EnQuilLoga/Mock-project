@@ -6,7 +6,7 @@ import ProductDes from "./product-detail/ProductDes";
 import { des, imgs } from "./product-detail/data-small";
 import Description from "./product-detail/Description";
 import Review from "./product-detail/Review";
-import Modal from "./product-detail/Modal";
+import Modal from "./product-detail/ReviewModal";
 import Security from "./product-detail/Security";
 import SocialMedia from "./product-detail/SocialMedia";
 import ImageDisplay from "./product-detail/ImageDisplay";
@@ -22,15 +22,29 @@ export default function ProductDetail() {
   const [displayDefaultDes, setDisplayDefaultDes] = useState(true);
   const [displayDes, setDisplayDes] = useState("");
 
+  const [customerReview, setCustomerReview] = useState([
+    {
+      customerName: "",
+      customerTitleReview: "",
+      customerContentReview: "",
+      date: "",
+      countStar: 0,
+    },
+  ]);
+
+  const [reviewCount, setReviewCount] = useState(1);
+
   const currentProduct = products?.find(
     (product) => product.id === Number(param.id)
   );
-  const filtered = products?.filter(
+
+  const youMightAlsoLike = products?.filter(
     (p: ProductType) => p.category === currentProduct?.category
   );
+
+  const otherProduct = products;
   const number = 10;
   const discount = Number(number) / Number(100);
-
   return (
     <>
       <div className=" ">
@@ -55,7 +69,7 @@ export default function ProductDetail() {
                   }}
                 >
                   {" "}
-                  Read reviews(1)
+                  Read reviews({reviewCount})
                 </span>
               </div>
               <div className="hover:text-red-600 cursor-pointer">
@@ -149,13 +163,19 @@ export default function ProductDetail() {
           ) : null}
           {/* Reviews */}
           {displayDes === "Reviews" ? (
-            <Review setDisplayReview={setDisplayReview} />
+            <Review customerReview={customerReview} />
           ) : null}
-          {/* Modal */}
+          {/* Review Modal */}
           {displayReview ? (
             <Modal
               currentProduct={currentProduct}
               setDisplayReview={setDisplayReview}
+              reviewCount={reviewCount}
+              setReviewCount={setReviewCount}
+              setCustomerReview={setCustomerReview}
+              customerReview={customerReview}
+              setDisplayDes={setDisplayDes}
+              setDisplayDefaultDes={setDisplayDefaultDes}
             />
           ) : null}
         </div>
@@ -167,16 +187,24 @@ export default function ProductDetail() {
               <p>Add Related products to weekly line up </p>
             </div>
 
-            <Slide products={products} number={number} filtered={filtered} />
+            <Slide
+              products={products}
+              number={number}
+              filtered={youMightAlsoLike}
+            />
           </div>
           {/* Other Products   */}
           <div>
             <div className="text-center mt-10">
               <p className="text-[30px]">Other Products </p>
-              <p>16 other products in the same category: </p>
+              <p>{otherProduct.length} other products in the same category: </p>
             </div>
 
-            <Slide products={products} number={number} filtered={filtered} />
+            <Slide
+              products={products}
+              number={number}
+              filtered={otherProduct}
+            />
           </div>
         </div>
       </div>
