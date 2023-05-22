@@ -27,8 +27,3 @@ code {
 .border-shoes:hover {
   border: 1px solid red;
 }
-
-.zoom:hover {
-  transition: ease-in-out;
-  transform: scale(1.5);
-}

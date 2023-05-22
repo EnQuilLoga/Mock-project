@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ProductType } from "../product-list/Interface";
 import ProductItem from "../ProductItem";
+import { Link } from "react-scroll";
 
 export default function Slide({ products, filtered, number }: any) {
   const [pageIndex, setPageIndex] = useState(0);
@@ -25,7 +26,12 @@ export default function Slide({ products, filtered, number }: any) {
 
   return (
     <>
-      <div className=" mt-10 relative pb-5">
+      <Link
+        to="top"
+        smooth={true}
+        duration={500}
+        className=" mt-10 relative pb-5"
+      >
         <div className="flex justify-around items-center ">
           {products.length > 0 &&
             relatedProducts.map((product: ProductType) => (
@@ -55,7 +61,7 @@ export default function Slide({ products, filtered, number }: any) {
             <i className="fas fa-chevron-right"></i>
           </div>
         </div>
-      </div>
+      </Link>
     </>
   );
 }

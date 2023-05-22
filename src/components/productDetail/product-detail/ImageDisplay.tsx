@@ -1,5 +1,4 @@
 import { useState } from "react";
-import p1 from "../../../assets/originals-windbreaker-winter-jacket.jpg";
 import { imgs } from "./data-small";
 
 export default function ImageDisplay(props: any) {
@@ -11,7 +10,7 @@ export default function ImageDisplay(props: any) {
         <div className="bg-red-600 text-white  rounded text-[13px] p-2 float-right">
           New
         </div>
-        <div className="flex  place-content-center zoom mb-12 cursor-pointer">
+        <div className="flex  place-content-center hover:ease-in-out hover:scale-150 mb-12 cursor-pointer">
           <img
             className="w-full h-44  object-contain object-center my-10"
             src={!image && !ig ? props.currentProduct?.image : image}

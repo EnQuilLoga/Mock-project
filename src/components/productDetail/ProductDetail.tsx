@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { NavLink, useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { RootState } from "../../call-api/reducer";
 import ProductDes from "./product-detail/ProductDes";
 import { des, imgs } from "./product-detail/data-small";
@@ -13,6 +13,7 @@ import ImageDisplay from "./product-detail/ImageDisplay";
 import { star } from "./product-list/smallData";
 import Slide from "./product-detail/Slide";
 import { ProductType } from "./product-list/Interface";
+import { Link } from "react-scroll";
 
 export default function ProductDetail() {
   const param = useParams();
@@ -24,11 +25,12 @@ export default function ProductDetail() {
 
   const [customerReview, setCustomerReview] = useState([
     {
-      customerName: "",
-      customerTitleReview: "",
-      customerContentReview: "",
-      date: "",
-      countStar: 0,
+      customerName: "Grade",
+      customerTitleReview: "Demo",
+      customerContentReview:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam,repellat",
+      date: "03/18/2022",
+      countStar: 4,
     },
   ]);
 
@@ -47,7 +49,7 @@ export default function ProductDetail() {
   const discount = Number(number) / Number(100);
   return (
     <>
-      <div className=" ">
+      <div id="top" className=" ">
         <div className="grid  sm:grid-cols-1 md:grid-cols-2  p-4 gap-4 ">
           {/* IMG */}
           <ImageDisplay currentProduct={currentProduct} />
@@ -62,7 +64,10 @@ export default function ProductDetail() {
               </div>
               <div className="mr-3 hover:text-red-600 cursor-pointer">
                 <i className="far fa-comment-dots"></i>
-                <span
+                <Link
+                  to="review"
+                  smooth={true}
+                  duration={500}
                   onClick={() => {
                     setDisplayDes("Reviews");
                     setDisplayDefaultDes(false);
@@ -70,7 +75,7 @@ export default function ProductDetail() {
                 >
                   {" "}
                   Read reviews({reviewCount})
-                </span>
+                </Link>
               </div>
               <div className="hover:text-red-600 cursor-pointer">
                 <i className="far fa-edit"></i>
@@ -134,23 +139,23 @@ export default function ProductDetail() {
             <Security />
           </div>
         </div>
-        {/* NAV LINK */}
+        {/* Description  + Product Details + Reviews*/}
         <div>
           <div className=" mx-auto text-center  flex flex-wrap justify-center items-center">
             {des.map((d: string) => (
-              <NavLink
+              <div
                 key={d}
-                to="#"
+                id={displayDes === "Reviews" ? "review" : ""}
                 className={` ${
                   displayDes === d ? "dis-active" : ""
-                }  text-[30px] mx-5 hover:border-red-600 border-b-2 border-white`}
+                } cursor-pointer text-[30px] mx-5 hover:border-red-600 border-b-2 border-white`}
                 onClick={() => {
                   setDisplayDes(d);
                   setDisplayDefaultDes(false);
                 }}
               >
                 {d}
-              </NavLink>
+              </div>
             ))}
           </div>
           {/* Description */}
@@ -163,7 +168,7 @@ export default function ProductDetail() {
           ) : null}
           {/* Reviews */}
           {displayDes === "Reviews" ? (
-            <Review customerReview={customerReview} />
+            <Review id="review" customerReview={customerReview} />
           ) : null}
           {/* Review Modal */}
           {displayReview ? (

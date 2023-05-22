@@ -172,6 +172,7 @@ export default function Modal(props: any) {
                           Send
                         </button>
                         <div className="mx-5">or</div>
+
                         <button
                           onClick={() => setDisplayReview(false)}
                           type="button"
