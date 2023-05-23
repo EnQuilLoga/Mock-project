@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { ProductType } from "../product-list/Interface";
 import ProductItem from "../ProductItem";
-import { Link } from "react-scroll";
 
 export default function Slide({ products, filtered, number }: any) {
   const [pageIndex, setPageIndex] = useState(0);
@@ -26,12 +25,7 @@ export default function Slide({ products, filtered, number }: any) {
 
   return (
     <>
-      <Link
-        to="top"
-        smooth={true}
-        duration={500}
-        className=" mt-10 relative pb-5"
-      >
+      <div className=" mt-10 relative pb-5">
         <div className="flex justify-around items-center ">
           {products.length > 0 &&
             relatedProducts.map((product: ProductType) => (
@@ -39,14 +33,14 @@ export default function Slide({ products, filtered, number }: any) {
             ))}
         </div>
 
-        <div className="z-20 flex justify-between items-center px-2 absolute top-1/2 left-0 right-0 transform  -translate-x- -translate-y-1/2">
+        <div className="z-10 flex justify-between items-center px-2 absolute top-1/2 left-0 right-0 transform  -translate-x- -translate-y-1/2">
           <div
             onClick={handlePrevious}
             className={` ${
               pageIndex === 0
                 ? "text-stone-100 cursor-auto hover:bg-stone-200"
                 : ""
-            } bg-stone-300 text-[16px] px-4 py-2 rounded-full hover:bg-red-600 hover:text-white cursor-pointer`}
+            } bg-stone-300 text-[16px] px-4 py-2 rounded-full hover:bg-red-600 hover:text-white cursor-pointer z-50 `}
           >
             <i className="fas fa-chevron-left"></i>
           </div>
@@ -56,12 +50,12 @@ export default function Slide({ products, filtered, number }: any) {
               pageIndex === totalPages - 1
                 ? "text-stone-100 cursor-auto hover:bg-stone-200 "
                 : ""
-            }  bg-stone-300 text-[16px] px-4 py-2 rounded-full hover:bg-red-600 hover:text-white cursor-pointer`}
+            }  bg-stone-300 text-[16px] px-4 py-2 rounded-full hover:bg-red-600 hover:text-white cursor-pointer z-50 `}
           >
             <i className="fas fa-chevron-right"></i>
           </div>
         </div>
-      </Link>
+      </div>
     </>
   );
 }

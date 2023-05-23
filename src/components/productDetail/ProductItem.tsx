@@ -1,3 +1,4 @@
+import { Link } from "react-scroll";
 import { star } from "./product-list/smallData";
 import { useNavigate } from "react-router-dom";
 
@@ -7,7 +8,10 @@ export default function ProductItem({ product, number }: any) {
   return (
     <>
       <div key={product.id} className={newProduct}>
-        <div
+        <Link
+          to="top"
+          smooth={true}
+          duration={500}
           className=" pb-10 hover:cursor-pointer  "
           onClick={() => {
             navigate(`/products/${product?.id}`);
@@ -24,7 +28,7 @@ export default function ProductItem({ product, number }: any) {
               alt={product?.title}
             />
           </div>
-        </div>
+        </Link>
 
         <div
           className="hover:text-red-600 hover:cursor-pointer"

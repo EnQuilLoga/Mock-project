@@ -2,7 +2,6 @@ import { useDispatch, useSelector } from "react-redux";
 import _ from "lodash";
 import React, { useEffect, useState } from "react";
 import { RootState } from "../../call-api/reducer";
-import { getProductFetch } from "../../call-api/productSlice";
 import ListProduct from "./product-list/ListProduct";
 import { tags } from "./product-list/smallData";
 import {
@@ -11,9 +10,12 @@ import {
   renderTag,
 } from "./product-list/FunctionFilter";
 import { Link } from "react-router-dom";
+import { getProductFetch } from "../../call-api/productSlice";
 
 export default function ProductList() {
   const dispatch = useDispatch();
+
+  const { products } = useSelector((state: RootState) => state.products);
 
   const [closePrice, setClosePrice] = useState(false);
   const [displayPrice, setDisplayPrice] = useState(false);
@@ -32,24 +34,13 @@ export default function ProductList() {
 
   const [pageIndex, setPageIndex] = useState(0);
 
-  const { isLoading, error, products } = useSelector(
-    (state: RootState) => state.products
-  );
+  const prices = products.map((p) => p.price);
+  const min = Math.min(...prices);
+  const max = Math.max(...prices);
 
   useEffect(() => {
     dispatch(getProductFetch());
   }, []);
-
-  if (isLoading) {
-    <div>Loading...</div>;
-  }
-  if (error) {
-    <div>Error: {error.message} </div>;
-  }
-
-  const prices = products.map((p) => p.price);
-  const min = Math.min(...prices);
-  const max = Math.max(...prices);
 
   const handlePriceRange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setRangePrice(e.target.value);
@@ -112,7 +103,7 @@ export default function ProductList() {
 
   return (
     <>
-      <div className="mx-5 flex items-start my-4">
+      <div id="top" className="mx-5 flex items-start my-4">
         <div className="columns-1 w-1/4 mr-5">
           <Link
             to="#"

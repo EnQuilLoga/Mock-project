@@ -1,7 +1,7 @@
 import _ from "lodash";
 
 export default function Review(props: any) {
-  const { customerReview, id } = props;
+  const { customerReview } = props;
   return (
     <>
       {customerReview.map((review: any, i: number) => (
