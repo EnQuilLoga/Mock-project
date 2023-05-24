@@ -3,6 +3,7 @@ import junnoLogo from "../../assets/junno-logo.jpg";
 import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 import bannerSubmenu from "../../assets/custom_banner_submenu.jpg";
+import NestedList from "./MenuNav";
 
 export interface IHeaderProps {}
 
@@ -10,7 +11,7 @@ export default function Header(props: IHeaderProps) {
   const [showMenu, setShowMenu] = useState<boolean>(false);
 
   return (
-    <header className="container mx-auto pt-7">
+    <header className="md:container mx-auto pt-7 relative">
       <div className="header-pc hidden md:block">
         <div className="flex">
           <div className="logo grow-0 mr-8">
@@ -278,8 +279,15 @@ export default function Header(props: IHeaderProps) {
         <div className="flex justify-between mb-2 items-center">
           <div className="grow">
             <button onClick={() => setShowMenu(!showMenu)}>
-              <i className="fas fa-bars text-3xl"></i>
+              <i className="fas fa-bars text-2xl"></i>
             </button>
+            <div
+              className={`absolute z-50 h-screen top-0 left-0 w-screen transition ease-linear after:absolute after:w-full after:h-full after:bg-black after:opacity-50 after:top-0 after:z-10 ${
+                showMenu ? "translate-x-0" : "-translate-x-full"
+              }`}
+            >
+              <NestedList setShowMenu={setShowMenu} showMenu={showMenu} />
+            </div>
           </div>
           <div className="logo grow flex justify-center">
             <Link to={"/"}>
