@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
@@ -10,15 +10,23 @@ import ContactUs from "./components/contact/ContactUs";
 import AboutUs from "./components/contact/AboutUs";
 import Userinfo from "./components/user-Information/Userinfo";
 import ProductList from "./components/productDetail/ProductList";
+import LoginTest from "./components/login/LoginTest";
 
 function App() {
+  const [refresh, setRefresh] = useState<boolean>(false);
+
+  // useEffect(() => (
+
+  // ), [])
+
   return (
     <div className="App">
       <Header />
       <Routes>
         <Route path="/" element={<Home />}></Route>
 
-        <Route path="/login" element={<LoginForm />}></Route>
+        {/* <Route path="/login" element={<LoginForm />}></Route> */}
+        <Route path="/login" element={<LoginTest />}></Route>
 
         <Route path="/user-info" element={<Userinfo />}></Route>
 

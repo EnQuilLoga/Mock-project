@@ -68,7 +68,9 @@ export default function Header(props: IHeaderProps) {
                   </div>
                   <div className="cursor-pointer group">
                     <div className="relative">
-                      <i className="fas fa-user md:text-2xl group-hover:text-red-600"></i>
+                      <Link to={"/login"}>
+                        <i className="fas fa-user md:text-2xl group-hover:text-red-600"></i>
+                      </Link>
                     </div>
                   </div>
                 </div>

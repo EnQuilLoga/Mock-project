@@ -2,86 +2,132 @@ import { useForm } from "react-hook-form";
 import { IUser } from "../../types/userType";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axiosInstance from "../../api/axiosInstance";
+import tokenApi from "../../api/requestToken";
 
-const LoginForm = () =>{
-    const { register, handleSubmit, watch, formState: {errors}} = useForm<IUser>(
-        {mode: 'onChange'}
-    );
-    const [showPassword, setShowPassword] = useState(false);
-    const onSubmit = (data: any) => {
-        alert("Login successfully");
-        // alert(JSON.stringify(data));
-        // console.log(watch(data));
-    }
-    const togglePasswordVisibility = () => {
-        setShowPassword(!showPassword);
-      };
-    
-    const navigate = useNavigate();
-    const handleTextClick = () => {
-        navigate('/register'); // Redirect to the register component
-      };
+const LoginForm = () => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm<IUser>({ mode: "onChange" });
+  const [showPassword, setShowPassword] = useState(false);
 
- 
+  const onSubmit = (data: any) => {
+    // alert(JSON.stringify(data));
+    // console.log(watch(data));
+    // const token = tokenApi.requestToken({ username: "canh", password: "abc" });
+    // console.log("token: ", token);
+  };
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const navigate = useNavigate();
+  const handleTextClick = () => {
+    navigate("/register"); // Redirect to the register component
+  };
 
   return (
     <>
-    <div className="bg-indigo-700 bg-opacity-25 p-1 h-screen">
-    <div className="mt-20 px-96 " >
-    <h2 className="text-center text-7xl text-indigo-900 font-semibold  ">Sign in to Junno</h2>
-    <h3 className="text-center text-3xl text-indigo-800 font-semibold pt-4">Welcome to Junno</h3>
-    <h3 className="text-center text-xl text-indigo-800 font-semibold ">Get free shipping, discount vouchers and members only products when you’re member</h3>
-    <div className='mt-12 flex justify-center'>
-        <form className='w-full max-w-xl ' onSubmit={handleSubmit(onSubmit)}>
-         
-
-            <div className="w-full md:w-auto px-3 mb-6 md:mb-0">
-          
+      <div className="bg-indigo-700 bg-opacity-25 p-1 h-screen">
+        <div className="mt-20 px-96 ">
+          <h2 className="text-center text-7xl text-indigo-900 font-semibold  ">Sign in to Junno</h2>
+          <h3 className="text-center text-3xl text-indigo-800 font-semibold pt-4">
+            Welcome to Junno
+          </h3>
+          <h3 className="text-center text-xl text-indigo-800 font-semibold ">
+            Get free shipping, discount vouchers and members only products when you’re member
+          </h3>
+          <div className="mt-12 flex justify-center">
+            <form className="w-full max-w-xl " onSubmit={handleSubmit(onSubmit)}>
+              <div className="w-full md:w-auto px-3 mb-6 md:mb-0">
                 {/* username */}
-                <label className='block uppercase text-sm font-bold text-gray-700 my-2 tracking-wide'>Username</label>
-                <input className='shadow appearance-none border rounded-2xl w-full py-2.5 px-3 mb-1 text-gray-700 leading-tight focus:outline-none' type="text" id="username" placeholder='Username'
-                {...register("username", {
+                <label className="block uppercase text-sm font-bold text-gray-700 my-2 tracking-wide">
+                  Username
+                </label>
+                <input
+                  className="shadow appearance-none border rounded-2xl w-full py-2.5 px-3 mb-1 text-gray-700 leading-tight focus:outline-none"
+                  type="text"
+                  id="username"
+                  placeholder="Username"
+                  {...register("username", {
                     required: true,
-                    pattern: /^[A-Z0-9._%+-]{6,}$/i 
-                })}/>
-                {errors?.username?.type === "pattern" && (<p className='text-red-500'>Username only have "._%+-" special character</p>)}
-                {errors?.username?.type === "required" && (<p className='text-red-500'>Username is required</p>)}
+                    pattern: /^[A-Z0-9._%+-]{6,}$/i,
+                  })}
+                />
+                {errors?.username?.type === "pattern" && (
+                  <p className="text-red-500">Username only have "._%+-" special character</p>
+                )}
+                {errors?.username?.type === "required" && (
+                  <p className="text-red-500">Username is required</p>
+                )}
 
                 {/* password  */}
-                <label className='block uppercase text-sm font-bold text-gray-700 my-2 tracking-wide'>Password</label>
-                <input className='shadow appearance-none border rounded-2xl w-full py-2.5 px-3 mb-1 text-gray-700 leading-tight focus:outline-none' type={showPassword ? 'text' : 'password'} id="password" placeholder='********'
-                {...register("password", {
+                <label className="block uppercase text-sm font-bold text-gray-700 my-2 tracking-wide">
+                  Password
+                </label>
+                <input
+                  className="shadow appearance-none border rounded-2xl w-full py-2.5 px-3 mb-1 text-gray-700 leading-tight focus:outline-none"
+                  type={showPassword ? "text" : "password"}
+                  id="password"
+                  placeholder="********"
+                  {...register("password", {
                     required: true,
-                    pattern: /^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[\d]){1,})(?=(.*[\W]){1,})(?!.*\s).{8,}$/i
-                })}/>
-                {errors?.password?.type === "pattern" && (<p className='text-red-500'>Your password must contains at least 8 characters, including at least one number, uppercase letters and special characters</p>)}
-                {errors?.password?.type === "required" && (<p className='text-red-500'>Password is required</p>)}
-            
+                    pattern:
+                      /^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[\d]){1,})(?=(.*[\W]){1,})(?!.*\s).{8,}$/i,
+                  })}
+                />
+                {errors?.password?.type === "pattern" && (
+                  <p className="text-red-500">
+                    Your password must contains at least 8 characters, including at least one
+                    number, uppercase letters and special characters
+                  </p>
+                )}
+                {errors?.password?.type === "required" && (
+                  <p className="text-red-500">Password is required</p>
+                )}
 
                 <div>
-                <input
+                  <input
                     type="checkbox"
                     id="showPassword"
                     checked={showPassword}
                     onChange={togglePasswordVisibility}
                     className="form-checkbox h-5 w-5 m-3"
-                />
-                <label htmlFor="showPassword" className='uppercase text-sm font-bold text-gray-700 my-2 tracking-wide'>Show Password</label>
+                  />
+                  <label
+                    htmlFor="showPassword"
+                    className="uppercase text-sm font-bold text-gray-700 my-2 tracking-wide"
+                  >
+                    Show Password
+                  </label>
                 </div>
-           
-            </div>
+              </div>
 
-            <button type='submit' className='bg-indigo-500 text-gray-100 text-2xl p-3 mt-12 w-full rounded-full tracking-wide
+              <button
+                type="submit"
+                className='bg-indigo-500 text-gray-100 text-2xl p-3 mt-12 w-full rounded-full tracking-wide
                     font-semibold focus:outline-none focus:shadow-outline hover:bg-indigo-600
-                    shadow-lg"'>Submit</button>
-            <div className="uppercase text-sm font-bold text-gray-700 my-4 tracking-wide"> Don't have an account? <button onClick={handleTextClick} className="underline text-lg"> Sign up now</button> </div>
-            
-        </form>
-    </div>
-    </div>
-    </div>
+                    shadow-lg"'
+              >
+                Submit
+              </button>
+              <div className="uppercase text-sm font-bold text-gray-700 my-4 tracking-wide">
+                {" "}
+                Don't have an account?{" "}
+                <button onClick={handleTextClick} className="underline text-lg">
+                  {" "}
+                  Sign up now
+                </button>{" "}
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </>
-  )
-}
+  );
+};
 
 export default LoginForm;
