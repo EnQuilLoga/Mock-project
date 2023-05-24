@@ -23,7 +23,7 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
-        <Route path="/" element={<Home />}></Route>
+        {/* <Route path="/" element={<Home />}></Route> */}
 
         {/* <Route path="/login" element={<LoginForm />}></Route> */}
         <Route path="/login" element={<LoginTest />}></Route>
@@ -37,6 +37,8 @@ function App() {
 
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/about-us" element={<AboutUs />} />
+
+        <Route path="/user-info" element={<Userinfo />} />
       </Routes>
       <Footer />
     </div>

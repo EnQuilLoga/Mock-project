@@ -12,9 +12,11 @@ const Userinfo = () => {
     }
 
     return(
-        <div>
-            <h2>Member Information</h2>
-            <h2>Hi </h2>
+        
+        <div className="mx-96 py-7">
+            <h2 className="font-sans text-3xl font-semibold  text-indigo-900 mb-5">Member Information</h2>
+            <h2 className="font-sans text-2xl font-semibold  text-indigo-800 mb-12">Edit profile </h2>
+            <div className="">
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div>
                     {/* Email  */}
@@ -76,6 +78,7 @@ const Userinfo = () => {
 
                 </div>
             </form>
+            </div>
         </div>
     )
 } 

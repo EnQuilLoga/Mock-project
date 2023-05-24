@@ -1,3 +1,4 @@
+import _ from 'lodash'
 
 export const sortProduct =  [
     {path: 'title', label: 'Name'},
@@ -21,9 +22,7 @@ export const tags = [
     { value: 'Sale' },
 ]
 
-const x = 5;
-export const star = [] as Number[];
-for(let i=0; i< x; i++ ) {
-    star.push(i)
-}
+export const star = _.range(5);
+
+
 

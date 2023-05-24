@@ -1,16 +1,19 @@
-import p1 from "../../../assets/originals-windbreaker-winter-jacket.jpg";
+import { useState } from "react";
 import { imgs } from "./data-small";
+
 export default function ImageDisplay(props: any) {
+  const [image, setImage] = useState("");
+  const [ig, setIg] = useState(false);
   return (
     <>
       <div className=" ">
         <div className="bg-red-600 text-white  rounded text-[13px] p-2 float-right">
           New
         </div>
-        <div className="flex  place-content-center zoom mb-12">
+        <div className="flex  place-content-center hover:ease-in-out hover:scale-150 mb-12 cursor-pointer">
           <img
             className="w-full h-44  object-contain object-center my-10"
-            src={p1}
+            src={!image && !ig ? props.currentProduct?.image : image}
             alt={props.currentProduct?.title}
           />
         </div>
@@ -19,6 +22,10 @@ export default function ImageDisplay(props: any) {
             <div
               key={i}
               className="flex mr-2  place-content-center hover:cursor-pointer border-shoes"
+              onClick={() => {
+                setImage(img);
+                setIg(true);
+              }}
             >
               <img
                 className="w-full h-30 object-contain object-center"
