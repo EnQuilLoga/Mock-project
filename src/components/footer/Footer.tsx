@@ -8,8 +8,8 @@ export interface IFooterProps {}
 
 export default function Footer(props: IFooterProps) {
   return (
-    <footer className="bg-gray-200">
-      <div className="footer-top pt-20 pb-16">
+    <footer className="px-5 bg-gray-200">
+      <div className="footer-top pt-14 pb-14">
         <div className="container mx-auto grid grid-cols-12 gap-6">
           <div className="col-span-12 md:col-span-6 lg:col-span-4">
             <div>
@@ -130,7 +130,7 @@ export default function Footer(props: IFooterProps) {
           </div>
         </div>
       </div>
-      <div className="footer-bottom pb-20">
+      <div className="footer-bottom pb-10">
         <div className="container mx-auto grid grid-cols-12 grid-">
           <div className="col-span-12 mb-5 md:col-span-4 text-center">
             <p>Copyright &copy; Rau Câu Team 💪😎🤳. All Rights Reserved</p>

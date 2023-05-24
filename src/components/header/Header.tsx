@@ -11,7 +11,7 @@ export default function Header(props: IHeaderProps) {
   const [showMenu, setShowMenu] = useState<boolean>(false);
 
   return (
-    <header className="md:container mx-auto pt-7 relative">
+    <header className="px-5 md:container mx-auto pt-7 relative">
       <div className="header-pc hidden md:block">
         <div className="flex">
           <div className="logo grow-0 mr-8">
