@@ -1,5 +1,7 @@
 import * as React from "react";
+import Swiper from "swiper";
 import Product1 from "../product-demo/Product1";
+import SlideHeaderHome from "./slide/slideHeaderHome";
 
 export interface IHomeProps {}
 
@@ -128,6 +130,23 @@ export default function Home(props: IHomeProps) {
   return (
     <div>
       <div> <h1 className="bg-violet-500">Home</h1></div>
+      <div className="my-6">
+      <SlideHeaderHome/>
+
+      <div className="grid grid-cols-2 mx-4 my-8 justify-center items-center">
+          <div className="transform hover:scale-x-110 hover:scale-y-110 trasition duration-6000 ml-2 mr-6">
+              <img src="https://demo2.posthemes.com/pos_junno/img/cms/1_1.jpg" alt="" />
+          </div>
+          <div className="grid grid-cols-2 ml-2 mr-6">
+              <img src="https://demo2.posthemes.com/pos_junno/img/cms/2_1.jpg" alt="" 
+              className="transform hover:scale-x-110 hover:scale-y-110 trasition duration-6000 mr-3"/>
+              <img src="https://demo2.posthemes.com/pos_junno/img/cms/3_1.jpg" alt="" 
+              className="transform hover:scale-x-110 hover:scale-y-110 trasition duration-6000 ml-3"/>
+              
+          </div>
+      </div>
+
+      </div>
       <div className="grid justify-items-center p-7 ">
         <div className="grid justify-items-center ">
           <h1 className="text-black font-black">Our Product</h1>
@@ -147,6 +166,30 @@ export default function Home(props: IHomeProps) {
           />          
         })}
       </div> 
+
+      <div className="grid grid-cols-3 w-screen h-screen mx-8 mb-14">
+        <div className=" mr-6 bg-center bg-no-repeat bg-cover bg-[url('./assets/4_1.jpg')]
+        transform hover:scale-x-110 hover:scale-y-110 trasition duration-6000">
+          <button className="bg-white border rounded my-72 mx-48">Men's</button>
+        </div>
+        <div className="mr-6 bg-center bg-no-repeat bg-cover bg-[url('./assets/5_1.jpg')]">
+          <button className="bg-white border rounded my-72 mx-48">Women's</button>
+        </div>
+        <div className="grid grid-rows-2">
+        <div className="mb-4 bg-center bg-no-repeat bg-cover bg-[url('./assets/4_1.jpg')]">
+          <button className="bg-white border rounded ">Men's</button>
+        </div>
+        <div className="mb-4 bg-center bg-no-repeat bg-cover bg-[url('./assets/4_1.jpg')]">
+          <button className="bg-white border rounded">Men's</button>
+        </div>
+        </div>
+      </div>
+        
+    
+
+    
+      
+
       
      
     </div>
