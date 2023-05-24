@@ -92,7 +92,7 @@ export default function Header(props: IHeaderProps) {
                 <li className="group relative">
                   <div className="group-hover:text-red-500 font-bold py-5">
                     <NavLink
-                      to={"bags-shoes"}
+                      to={"products"}
                       className={({ isActive, isPending }) =>
                         isPending ? "pending " : isActive ? "text-red-500" : ""
                       }
@@ -104,73 +104,73 @@ export default function Header(props: IHeaderProps) {
                     <div className="flex justify-between">
                       <div>
                         <Link
-                          to={"shoes"}
+                          to={"products"}
                           className="hover:text-red-500 font-bold text-black inline-block mb-3"
                         >
                           SHOES
                         </Link>
                         <ul>
                           <li className="hover:text-red-500 mb-1 hover:translate-x-2 transition ease-linear delay-150">
-                            <Link to={"women-shoes"}>Women Shoes</Link>
+                            <Link to={"products"}>Women Shoes</Link>
                           </li>
                           <li className="hover:text-red-500 mb-1 hover:translate-x-2 transition ease-linear delay-150">
-                            <Link to={"men-shoes"}>Men Shoes</Link>
+                            <Link to={"products"}>Men Shoes</Link>
                           </li>
                           <li className="hover:text-red-500 mb-1 hover:translate-x-2 transition ease-linear delay-150">
-                            <Link to={"boots"}>Boots</Link>
+                            <Link to={"products"}>Boots</Link>
                           </li>
                           <li className="hover:text-red-500 mb-1 hover:translate-x-2 transition ease-linear delay-150">
-                            <Link to={"casual-shoes"}>Casual Shoes</Link>
+                            <Link to={"products"}>Casual Shoes</Link>
                           </li>
                           <li className="hover:text-red-500 mb-1 hover:translate-x-2 transition ease-linear delay-150">
-                            <Link to={"flip-flops"}>Flip Flops</Link>
+                            <Link to={"products"}>Flip Flops</Link>
                           </li>
                         </ul>
                       </div>
                       <div>
                         <Link
-                          to={"luggage-bags"}
+                          to={"products"}
                           className="hover:text-red-500 font-bold text-black inline-block mb-3"
                         >
                           LUGGAGE & BAGS
                         </Link>
                         <ul>
                           <li className="hover:text-red-500 mb-1 hover:translate-x-2 transition ease-linear delay-150">
-                            <Link to={"stylish-backpacks"}>Stylish Backpacks</Link>
+                            <Link to={"products"}>Stylish Backpacks</Link>
                           </li>
                           <li className="hover:text-red-500 mb-1 hover:translate-x-2 transition ease-linear delay-150">
-                            <Link to={"shoulder-bags"}>Shoulder Bags</Link>
+                            <Link to={"products"}>Shoulder Bags</Link>
                           </li>
                           <li className="hover:text-red-500 mb-1 hover:translate-x-2 transition ease-linear delay-150">
-                            <Link to={"crossbody-bags"}>Crossbody Bags</Link>
+                            <Link to={"products"}>Crossbody Bags</Link>
                           </li>
                           <li className="hover:text-red-500 mb-1 hover:translate-x-2 transition ease-linear delay-150">
-                            <Link to={"briefcases"}>Briefcases</Link>
+                            <Link to={"products"}>Briefcases</Link>
                           </li>
                         </ul>
                       </div>
                       <div>
                         <Link
-                          to={"other-bags-accessories"}
+                          to={"products"}
                           className="hover:text-red-500 font-bold text-black inline-block mb-3"
                         >
                           OTHER BAGS & ACCESSORIES
                         </Link>
                         <ul>
                           <li className="hover:text-red-500 mb-1 hover:translate-x-2 transition ease-linear delay-150">
-                            <Link to={"cosmetic-bags-cases"}>Cosmetic Bags & Cases</Link>
+                            <Link to={"products"}>Cosmetic Bags & Cases</Link>
                           </li>
                           <li className="hover:text-red-500 mb-1 hover:translate-x-2 transition ease-linear delay-150">
-                            <Link to={"wallets-card-holders"}>Wallets & Card Holders</Link>
+                            <Link to={"products"}>Wallets & Card Holders</Link>
                           </li>
                           <li className="hover:text-red-500 mb-1 hover:translate-x-2 transition ease-linear delay-150">
-                            <Link to={"luggage-covers"}>Luggage Covers</Link>
+                            <Link to={"products"}>Luggage Covers</Link>
                           </li>
                           <li className="hover:text-red-500 mb-1 hover:translate-x-2 transition ease-linear delay-150">
-                            <Link to={"passport-covers"}>Passport Covers</Link>
+                            <Link to={"products"}>Passport Covers</Link>
                           </li>
                           <li className="hover:text-red-500 mb-1 hover:translate-x-2 transition ease-linear delay-150">
-                            <Link to={"bag-parts-accessories"}>Bag Parts & Accessories</Link>
+                            <Link to={"products"}>Bag Parts & Accessories</Link>
                           </li>
                         </ul>
                       </div>
@@ -200,19 +200,19 @@ export default function Header(props: IHeaderProps) {
                     <div>
                       <ul>
                         <li className="hover:text-red-500 hover:translate-x-2 transition ease-linear delay-150 pb-1 w-52 px-5 my-2">
-                          <Link to={"women-shoes"}>Women Shoes</Link>
+                          <Link to={"products"}>Women Shoes</Link>
                         </li>
                         <li className="hover:text-red-500 hover:translate-x-2 transition ease-linear delay-150 pb-1 w-52 px-5 my-2">
-                          <Link to={"men-shoes"}>Men Shoes</Link>
+                          <Link to={"products"}>Men Shoes</Link>
                         </li>
                         <li className="hover:text-red-500 hover:translate-x-2 transition ease-linear delay-150 pb-1 w-52 px-5 my-2">
-                          <Link to={"boots"}>Boots</Link>
+                          <Link to={"products"}>Boots</Link>
                         </li>
                         <li className="hover:text-red-500 hover:translate-x-2 transition ease-linear delay-150 pb-1 w-52 px-5 my-2">
-                          <Link to={"casual-shoes"}>Casual Shoes</Link>
+                          <Link to={"products"}>Casual Shoes</Link>
                         </li>
                         <li className="hover:text-red-500 hover:translate-x-2 transition ease-linear delay-150 pb-1 w-52 px-5 my-2">
-                          <Link to={"flip-flops"}>Flip Flops</Link>
+                          <Link to={"products"}>Flip Flops</Link>
                         </li>
                       </ul>
                     </div>
@@ -234,19 +234,19 @@ export default function Header(props: IHeaderProps) {
                     <div>
                       <ul>
                         <li className="hover:text-red-500 hover:translate-x-2 transition ease-linear delay-150 pb-1 w-64 px-5 my-2">
-                          <Link to={"cosmetic-bags-cases"}>Cosmetic Bags & Cases</Link>
+                          <Link to={"products"}>Cosmetic Bags & Cases</Link>
                         </li>
                         <li className="hover:text-red-500 hover:translate-x-2 transition ease-linear delay-150 pb-1 w-64 px-5 my-2">
-                          <Link to={"wallets-card-holders"}>Wallets & Card Holders</Link>
+                          <Link to={"products"}>Wallets & Card Holders</Link>
                         </li>
                         <li className="hover:text-red-500 hover:translate-x-2 transition ease-linear delay-150 pb-1 w-64 px-5 my-2">
-                          <Link to={"luggage-covers"}>Luggage Covers</Link>
+                          <Link to={"products"}>Luggage Covers</Link>
                         </li>
                         <li className="hover:text-red-500 hover:translate-x-2 transition ease-linear delay-150 pb-1 w-64 px-5 my-2">
-                          <Link to={"passport-covers"}>Passport Covers</Link>
+                          <Link to={"products"}>Passport Covers</Link>
                         </li>
                         <li className="hover:text-red-500 hover:translate-x-2 transition ease-linear delay-150 pb-1 w-64 px-5 my-2">
-                          <Link to={"bag-parts-accessories"}>Bag Parts & Accessories</Link>
+                          <Link to={"products"}>Bag Parts & Accessories</Link>
                         </li>
                       </ul>
                     </div>
