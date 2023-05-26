@@ -22,29 +22,38 @@ export default () => {
       modules={[Navigation, Pagination, Scrollbar,EffectFade,EffectCreative, A11y, Autoplay]}
       effect={"fade, creative"}   
       slidesPerView={1} 
-    //   loop={true}      
+      loop={true}      
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
-    //   autoplay={{
-    //     delay: 3000,
-    //     disableOnInteraction: false,
-    //   }}
+      autoplay={{
+        delay: 3000,
+        disableOnInteraction: false,
+      }}
     
     >                
       <SwiperSlide>
        
         <div className="relative w-full h-slide bg-[url('./assets/sample-1.jpg')]">
-            <div className='absolute'>
-                <p>NIKE RUNNING SHOES</p>
-                <h2>Sport Shoes</h2>
-                <h2>Sale 40% Off</h2>
-                <button className='bg-white border rounded px-2 py-2'>SHOP NOW</button> 
+            <div className='absolute top-1/3 left-6 '>
+                <p className='text-white uppercase'>NIKE RUNNING SHOES</p>
+                <h2 className='text-slate-100 text-4xl  '>Sport Shoes</h2>
+                <h2 className='text-slate-100 text-6xl'>Sale 40% Off</h2>
+                <button className='bg-white border rounded px-4 py-2 mt-8 hover:bg-red-500 text-1xl uppercase '>shop now</button> 
             </div>
-        </div>
+        </div>       
       </SwiperSlide>
-      <SwiperSlide><img src="https://demo2.posthemes.com/pos_junno/modules/posslideshows/images/sample-2.jpg" alt="" /></SwiperSlide>
+      <SwiperSlide>
+        <div className="relative w-full h-slide1 bg-cover bg-[url('./assets/sample-2.jpg')]">
+              <div className='absolute top-1/3 left-6 '>
+                  <p className='text-white uppercase'>NEW ARRIVALS</p>
+                  <h2 className='text-slate-100 text-4xl  '>Summer Sale</h2>
+                  <h2 className='text-slate-100 text-6xl'>Up To 70% Off</h2>
+                  <button className='bg-white border rounded px-4 py-2 mt-8 hover:bg-red-500 text-1xl uppercase '>shop now</button> 
+              </div>
+          </div>
+      </SwiperSlide>
       
       
       

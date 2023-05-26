@@ -3,6 +3,7 @@ import Swiper from "swiper";
 import Product1 from "../product-demo/Product1";
 import SlideHeaderHome from "./slide/slideHeaderHome";
 
+
 export interface IHomeProps {}
 
 const data=[{
@@ -129,21 +130,36 @@ const data=[{
 export default function Home(props: IHomeProps) {
   return (
     <div>
-      <div> <h1 className="bg-violet-500">Home</h1></div>
+      {/* <div> <h1 className="bg-violet-500">Home</h1></div> */}
       <div className="my-6">
       <SlideHeaderHome/>
 
-      <div className="grid grid-cols-2 mx-4 my-8 justify-center items-center">
-          <div className="transform hover:scale-x-110 hover:scale-y-110 trasition duration-6000 ml-2 mr-6">
+      <div className="grid grid-cols-2 mx-6 my-6 ">
+          <div className="h-96">
+            <div className="overflow-hidden group/zoom mr-4">
+              <img src="https://demo2.posthemes.com/pos_junno/img/cms/1_1.jpg" alt="" 
+              className="group-hover/zoom:scale-110 duration-500 "/>
+            </div>
+          </div>
+         <div className="grid grid-cols-2 h-slide2 mb-5">
+            <div className="overflow-hidden group/zoom mr-4 mb-3">
+              <img src="https://demo2.posthemes.com/pos_junno/img/cms/2_1.jpg" alt="" 
+              className="group-hover/zoom:scale-110 duration-500 "/>
+            </div>
+            <div className="overflow-hidden group/zoom mr-4 mb-3 ">
+              <img src="https://demo2.posthemes.com/pos_junno/img/cms/3_1.jpg" alt="" 
+              className="group-hover/zoom:scale-110 duration-500 "/>
+            </div>
+         </div>
+          {/* <div className="transform hover:scale-x-110 hover:scale-y-110 trasition duration-6000 ml-2 mr-6">
               <img src="https://demo2.posthemes.com/pos_junno/img/cms/1_1.jpg" alt="" />
           </div>
           <div className="grid grid-cols-2 ml-2 mr-6">
               <img src="https://demo2.posthemes.com/pos_junno/img/cms/2_1.jpg" alt="" 
               className="transform hover:scale-x-110 hover:scale-y-110 trasition duration-6000 mr-3"/>
               <img src="https://demo2.posthemes.com/pos_junno/img/cms/3_1.jpg" alt="" 
-              className="transform hover:scale-x-110 hover:scale-y-110 trasition duration-6000 ml-3"/>
-              
-          </div>
+              className="transform hover:scale-x-110 hover:scale-y-110 trasition duration-6000 ml-3"/>              
+          </div> */}
       </div>
 
       </div>
@@ -168,21 +184,22 @@ export default function Home(props: IHomeProps) {
       </div> 
 
       <div className="grid grid-cols-3 w-screen h-screen mx-8 mb-14">
-        <div className=" mr-6 bg-center bg-no-repeat bg-cover bg-[url('./assets/4_1.jpg')]
-        transform hover:scale-x-110 hover:scale-y-110 trasition duration-6000">
-          <button className="bg-white border rounded my-72 mx-48">Men's</button>
-        </div>
-        <div className="mr-6 bg-center bg-no-repeat bg-cover bg-[url('./assets/5_1.jpg')]">
-          <button className="bg-white border rounded my-72 mx-48">Women's</button>
-        </div>
-        <div className="grid grid-rows-2">
-        <div className="mb-4 bg-center bg-no-repeat bg-cover bg-[url('./assets/4_1.jpg')]">
-          <button className="bg-white border rounded ">Men's</button>
-        </div>
-        <div className="mb-4 bg-center bg-no-repeat bg-cover bg-[url('./assets/4_1.jpg')]">
-          <button className="bg-white border rounded">Men's</button>
-        </div>
-        </div>
+         <div className="overflow-hidden group/zoom mb-5 relative mr-10">
+            <img src="https://demo2.posthemes.com/pos_junno/img/cms/4_1.jpg" alt="giaynam" 
+            className="group-hover/zoom:scale-110 duration-500" />
+            <button className="absolute top-64 right-40 border rounded bg-slate-100 px-3 py-3 hover:bg-red-500 ">Men's Shoes</button>
+          </div>
+         <div className="overflow-hidden group/zoom mb-5 relative mr-10">
+            <img src="https://demo2.posthemes.com/pos_junno/img/cms/5_1.jpg" alt="giaynam" 
+            className="group-hover/zoom:scale-110 duration-500" />
+            <button className="absolute top-64 right-40 border rounded bg-slate-100 px-3 py-3  ">Women's Shoes</button>
+          </div>
+
+          <div className="grid grid-rows-2">
+            <img src="https://demo2.posthemes.com/pos_junno/img/cms/6_1.jpg" alt="" />
+            <img src="https://demo2.posthemes.com/pos_junno/img/cms/7_1.jpg" alt="" />            
+          </div>
+         
       </div>
         
     

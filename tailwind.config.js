@@ -10,6 +10,8 @@ module.exports = {
       },
       height: {
         slide: "490px",
+        slide1: "470px  ",
+        slide2: "380px",
       },
     },
   },
