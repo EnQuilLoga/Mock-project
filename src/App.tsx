@@ -10,7 +10,6 @@ import ContactUs from "./components/contact/ContactUs";
 import AboutUs from "./components/contact/AboutUs";
 import Userinfo from "./components/user-Information/Userinfo";
 import ProductList from "./components/productDetail/ProductList";
-import LoginTest from "./components/login/LoginTest";
 
 function App() {
   const [refresh, setRefresh] = useState<boolean>(false);
@@ -23,10 +22,9 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
-        {/* <Route path="/" element={<Home />}></Route> */}
+        <Route path="/" element={<Home />}></Route>
 
         <Route path="/login" element={<LoginForm />}></Route>
-        {/* <Route path="/login" element={<LoginTest />}></Route> */}
 
         <Route path="/user-info" element={<Userinfo />}></Route>
 
