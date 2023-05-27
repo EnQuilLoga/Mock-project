@@ -1,17 +1,13 @@
 import _ from 'lodash'
 
 export const sortProduct =  [
-    {path: 'title', label: 'Name'},
+    {path: 'name', label: 'Name'},
     {path: 'price', label: 'Price'},
   
 ]
 
 export const category = [
-    {value: "men's clothing", name: 'Category'},
-    {value: "jewelery", name: 'Category'},
-    {value: "electronics", name: 'Category'},
-    {value: "women's clothing", name: 'Category'},
-    
+    {value: "CASUAL", name: 'Category'},
 ]
 
 

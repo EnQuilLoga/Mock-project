@@ -25,37 +25,33 @@ export default function ProductDetail() {
 
   const [customerReview, setCustomerReview] = useState([
     {
-      customerName: "Grade",
-      customerTitleReview: "Demo",
-      customerContentReview:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam,repellat",
-      date: "03/18/2022",
-      countStar: 4,
+      customerName: "",
+      customerTitleReview: "",
+      customerContentReview: "",
+      date: "",
+      countStar: 0,
     },
   ]);
 
-  const [reviewCount, setReviewCount] = useState(1);
+  const [reviewCount, setReviewCount] = useState(0);
 
-  const currentProduct = products?.find(
-    (product) => product.id === Number(param.id)
-  );
+  const currentProduct = products?.find((product) => product._id === param.id);
 
   const youMightAlsoLike = products?.filter(
     (p: ProductType) => p.category === currentProduct?.category
   );
 
   const otherProduct = products;
-  const number = 10;
-  const discount = Number(number) / Number(100);
+
   return (
     <>
-      <div id="top" className=" ">
+      <div id="top" className=" text-[18px]">
         <div className="grid  sm:grid-cols-1 md:grid-cols-2  p-4 gap-4 ">
           {/* IMG */}
           <ImageDisplay currentProduct={currentProduct} />
           {/* DES */}
-          <div className="">
-            <p className="text-[24px]">{currentProduct?.title}</p>
+          <div className=" ml-10">
+            <p className="text-[24px]">{currentProduct?.name}</p>
             <div className="flex justify-start items-center  flex-wrap">
               <div className=" my-1 mr-2">
                 {star.map((_s, i) => (
@@ -87,22 +83,17 @@ export default function ProductDetail() {
             </div>
             <div className="flex flex-wrap justify-start items-center inline my-6">
               <div className="text-[24px] mr-5 ">
-                <span className="line-through text-stone-700 mr-1 inline">
-                  $ {(Number(currentProduct?.price) * discount).toFixed(2)}
-                </span>
-                -{" "}
                 <span className="text-black-700  decoration-4 ml-1 font-extrabold  mr-2">
                   {" "}
                   ${currentProduct?.price}
                 </span>
               </div>
-              <div className="bg-gray-900 text-white p-1  ">Save {number}%</div>
             </div>
-            <div>{currentProduct?.description}</div>
+            {/* <div>{currentProduct?.description}</div> */}
             <div className="my-5">
               Available:{" "}
               <span className="text-green-500">
-                {currentProduct?.rating?.count} In Stock
+                {/* {currentProduct?.rating?.count} In Stock */}
               </span>
             </div>
             {/*  ADD TO CART */}
@@ -140,7 +131,7 @@ export default function ProductDetail() {
           </div>
         </div>
         {/* Description  + Product Details + Reviews*/}
-        <div>
+        <div className="mt-16">
           <div className=" mx-auto text-center  flex flex-wrap justify-center items-center">
             {des.map((d: string) => (
               <div
@@ -168,7 +159,11 @@ export default function ProductDetail() {
           ) : null}
           {/* Reviews */}
           {displayDes === "Reviews" ? (
-            <Review id="review" customerReview={customerReview} />
+            <Review
+              id="review"
+              customerReview={customerReview}
+              reviewCount={reviewCount}
+            />
           ) : null}
           {/* Review Modal */}
           {displayReview ? (
@@ -192,11 +187,7 @@ export default function ProductDetail() {
               <p>Add Related products to weekly line up </p>
             </div>
 
-            <Slide
-              products={products}
-              number={number}
-              filtered={youMightAlsoLike}
-            />
+            <Slide products={products} filtered={youMightAlsoLike} />
           </div>
           {/* Other Products   */}
           <div>
@@ -205,11 +196,7 @@ export default function ProductDetail() {
               <p>{otherProduct.length} other products in the same category: </p>
             </div>
 
-            <Slide
-              products={products}
-              number={number}
-              filtered={otherProduct}
-            />
+            <Slide products={products} filtered={otherProduct} />
           </div>
         </div>
       </div>

@@ -49,16 +49,13 @@ export default function Modal(props: any) {
 
   const handleSubmitReview = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setCustomerReview([
-      ...customerReview,
-      {
-        customerTitleReview,
-        customerName,
-        customerContentReview,
-        date,
-        countStar,
-      },
-    ]);
+    customerReview.push({
+      customerTitleReview,
+      customerName,
+      customerContentReview,
+      date,
+      countStar,
+    });
 
     if (
       customerTitleReview.trim() === "" ||
@@ -89,16 +86,15 @@ export default function Modal(props: any) {
                   <div className="flex mr-2  place-content-center p-10 border-2 border-stone-200 mb-5">
                     <img
                       className="w-full h-30 object-contain object-center "
-                      src={currentProduct?.image}
+                      src={currentProduct?.imageURL}
                     />
                   </div>
-                  <div>{currentProduct?.title}</div>
+                  <div className="text-[24px]">{currentProduct?.name}</div>
                 </div>
                 <div className=" w-1/2 pl-4">
                   <div className="text-[22px]">Write your review</div>
                   <div className="flex justify-start items-center">
                     <div className="mr-2 font-bold">Quantity</div>
-                    {/*  text-amber-400 */}
                     <div className=" my-1 mr-2">
                       {star.map((st, i) => (
                         <i
