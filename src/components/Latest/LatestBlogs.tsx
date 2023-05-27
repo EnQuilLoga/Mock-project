@@ -44,7 +44,7 @@ export default () => {
       // }}
     >
         <div>
-        {/* Fashion 1 */}
+          {/* Fashion Fifth post */}
           <div>
             <SwiperSlide>
               <div className="overflow-hidden group/zoom mb-5">
@@ -52,7 +52,7 @@ export default () => {
               </div>
               <div className='pt-5'>
                     <div className='text-red-500 font-light'>Fashion</div>
-                    <h4 className='py-2 capitalize font-bold hover:text-red-500'><a href="#">This is secound post for xipBlog</a></h4>
+                    <h4 className='py-2 capitalize font-bold hover:text-red-500'><a href="#">This is fifth post for xipBlog</a></h4>
                     <div>
                       <p className='font-light'>
                           Posted by <span className='text-red-500'>Demo Posthemes</span> May 06TH, 2020
@@ -62,7 +62,7 @@ export default () => {
             </SwiperSlide>
           </div>
 
-          {/* Fashion2 */}
+          {/* Fashion Secound post */}
           <div>
             <SwiperSlide>
               <div className="overflow-hidden group/zoom mb-5">
@@ -80,7 +80,7 @@ export default () => {
             </SwiperSlide>
           </div>
 
-          {/* Fashion3 */}
+          {/* Fashion Fourth post */}
           <div>
             <SwiperSlide>
               <div className="overflow-hidden group/zoom mb-5">
@@ -88,7 +88,7 @@ export default () => {
               </div>
               <div className='pt-5'>
                     <div className='text-red-500 font-light'>Fashion</div>
-                    <h4 className='py-2 capitalize font-bold hover:text-red-500'><a href="#">This is secound post for xipBlog</a></h4>
+                    <h4 className='py-2 capitalize font-bold hover:text-red-500'><a href="#">This is fourth post for xipBlog</a></h4>
                     <div>
                       <p className='font-light'>
                           Posted by <span className='text-red-500'>Demo Posthemes</span> May 06TH, 2020
@@ -98,7 +98,7 @@ export default () => {
             </SwiperSlide>
           </div>
 
-          {/* Fashion4 */}
+          {/* Fashion Third post */}
           <div>
             <SwiperSlide>
               <div className="overflow-hidden group/zoom mb-5">
@@ -106,7 +106,7 @@ export default () => {
               </div>
               <div className='pt-5'>
                     <div className='text-red-500 font-light'>Fashion</div>
-                    <h4 className='py-2 capitalize font-bold hover:text-red-500'><a href="#">This is secound post for xipBlog</a></h4>
+                    <h4 className='py-2 capitalize font-bold hover:text-red-500'><a href="#">This is third post for xipBlog</a></h4>
                     <div>
                       <p className='font-light'>
                           Posted by <span className='text-red-500'>Demo Posthemes</span> May 06TH, 2020
@@ -116,7 +116,7 @@ export default () => {
             </SwiperSlide>
           </div>
 
-          {/* Fashion5 */}
+          {/* Fashion Fifth post */}
           <div>
             <SwiperSlide>
               <div className="overflow-hidden group/zoom mb-5">
@@ -124,7 +124,7 @@ export default () => {
               </div>
               <div className='pt-5'>
                     <div className='text-red-500 font-light'>Fashion</div>
-                    <h4 className='py-2 capitalize font-bold hover:text-red-500'><a href="#">This is secound post for xipBlog</a></h4>
+                    <h4 className='py-2 capitalize font-bold hover:text-red-500'><a href="#">This is fifth post for xipBlog</a></h4>
                     <div>
                       <p className='font-light'>
                           Posted by <span className='text-red-500'>Demo Posthemes</span> May 06TH, 2020
@@ -134,7 +134,7 @@ export default () => {
             </SwiperSlide>
           </div>
 
-          {/* Fashion6 */}
+          {/* Fashion Secound post */}
           <div>
             <SwiperSlide>
               <div className="overflow-hidden group/zoom mb-5">
