@@ -9,6 +9,10 @@ import ProductDetail from "./components/productDetail/ProductDetail";
 import ContactUs from "./components/contact/ContactUs";
 import AboutUs from "./components/contact/AboutUs";
 import LatestBlogs from "./components/Latest/LatestBlogs";
+import DetailFifth from "./components/Latest/DetailFifth";
+import DetailFourth from "./components/Latest/DetailFourth";
+import DetailSecond from "./components/Latest/DetailSecond";
+import DetailThird from "./components/Latest/DetailThird";
 
 function App() {
   return (
@@ -24,6 +28,10 @@ function App() {
         <Route path="/product" element={<ProductDetail />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/Detail-fifth" element={<DetailFifth />} />
+        <Route path="/Detail-fourth" element={<DetailFourth />} />
+        <Route path="/Detail-second" element={<DetailSecond />} />
+        <Route path="/Detail-third" element={<DetailThird/>} />
 
 
       </Routes>

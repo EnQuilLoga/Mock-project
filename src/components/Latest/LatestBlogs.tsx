@@ -1,5 +1,6 @@
 // import Swiper core and required modules
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
+import { Link } from 'react-router-dom';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -52,7 +53,7 @@ export default () => {
               </div>
               <div className='pt-5'>
                     <div className='text-red-500 font-light'>Fashion</div>
-                    <h4 className='py-2 capitalize font-bold hover:text-red-500'><a href="#">This is fifth post for xipBlog</a></h4>
+                    <h4 className='py-2 capitalize font-bold hover:text-red-500'><Link to="Detail-fifth">This is fifth post for xipBlog</Link></h4>
                     <div>
                       <p className='font-light'>
                           Posted by <span className='text-red-500'>Demo Posthemes</span> May 06TH, 2020
@@ -70,7 +71,7 @@ export default () => {
               </div>
               <div className='pt-5'>
                     <div className='text-red-500 font-light'>Fashion</div>
-                    <h4 className='py-2 capitalize font-bold hover:text-red-500'><a href="#">This is secound post for xipBlog</a></h4>
+                    <h4 className='py-2 capitalize font-bold hover:text-red-500'><Link to="Detail-second">This is secound post for xipBlog</Link></h4>
                     <div>
                       <p className='font-light'>
                           Posted by <span className='text-red-500'>Demo Posthemes</span> May 06TH, 2020
@@ -88,7 +89,7 @@ export default () => {
               </div>
               <div className='pt-5'>
                     <div className='text-red-500 font-light'>Fashion</div>
-                    <h4 className='py-2 capitalize font-bold hover:text-red-500'><a href="#">This is fourth post for xipBlog</a></h4>
+                    <h4 className='py-2 capitalize font-bold hover:text-red-500'><Link to="Detail-fourth">This is fourth post for xipBlog</Link></h4>
                     <div>
                       <p className='font-light'>
                           Posted by <span className='text-red-500'>Demo Posthemes</span> May 06TH, 2020
@@ -106,7 +107,7 @@ export default () => {
               </div>
               <div className='pt-5'>
                     <div className='text-red-500 font-light'>Fashion</div>
-                    <h4 className='py-2 capitalize font-bold hover:text-red-500'><a href="#">This is third post for xipBlog</a></h4>
+                    <h4 className='py-2 capitalize font-bold hover:text-red-500'><Link to="Detail-third">This is third post for xipBlog</Link></h4>
                     <div>
                       <p className='font-light'>
                           Posted by <span className='text-red-500'>Demo Posthemes</span> May 06TH, 2020
@@ -124,7 +125,7 @@ export default () => {
               </div>
               <div className='pt-5'>
                     <div className='text-red-500 font-light'>Fashion</div>
-                    <h4 className='py-2 capitalize font-bold hover:text-red-500'><a href="#">This is fifth post for xipBlog</a></h4>
+                    <h4 className='py-2 capitalize font-bold hover:text-red-500'><Link to="Detail-fifth">This is fifth post for xipBlog</Link></h4>
                     <div>
                       <p className='font-light'>
                           Posted by <span className='text-red-500'>Demo Posthemes</span> May 06TH, 2020
@@ -143,7 +144,7 @@ export default () => {
               
               <div className='pt-5'>
                     <div className='text-red-500 font-light'>Fashion</div>
-                    <h4 className='py-2 capitalize font-bold hover:text-red-500'><a href="#">This is secound post for xipBlog</a></h4>
+                    <h4 className='py-2 capitalize font-bold hover:text-red-500'><Link to="Detail-second">This is secound post for xipBlog</Link></h4>
                     <div>
                       <p className='font-light'>
                           Posted by <span className='text-red-500'>Demo Posthemes</span> May 06TH, 2020
