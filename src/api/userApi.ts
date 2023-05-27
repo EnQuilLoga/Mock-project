@@ -1,12 +1,9 @@
-import { IUser } from "../types/userType";
+import { IUserProfile } from "../types/userProfile";
 import axiosInstance from "./axiosInstance";
 
 const userApi = {
-  getAllUsers: (): Promise<IUser[]> => {
-    return axiosInstance.get("users");
-  },
-  getASingleUser: (userId: number): Promise<IUser> => {
-    return axiosInstance.get(`users/${userId}`);
+  getUserProfile: (id: string): Promise<IUserProfile> => {
+    return axiosInstance.get(`/api/users/profile/${id}`);
   },
 };
 
