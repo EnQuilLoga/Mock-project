@@ -134,32 +134,24 @@ export default function Home(props: IHomeProps) {
       <div className="my-6">
       <SlideHeaderHome/>
 
-      <div className="grid grid-cols-2 mx-6 my-6 ">
-          <div className="h-96">
-            <div className="overflow-hidden group/zoom mr-4">
+      <div className="md:grid md:grid-cols-4 mx-6 my-6">
+          
+            <div className="overflow-hidden group/zoom h-slide2 mr-4 col-span-2 sm:row-span-1 ">
               <img src="https://demo2.posthemes.com/pos_junno/img/cms/1_1.jpg" alt="" 
               className="group-hover/zoom:scale-110 duration-500 "/>
             </div>
-          </div>
-         <div className="grid grid-cols-2 h-slide2 mb-5">
-            <div className="overflow-hidden group/zoom mr-4 mb-3">
+          
+        
+            <div className="overflow-hidden group/zoomh h-slide2 mr-4 mb-3 col-span-1 sm:row-span-1">
               <img src="https://demo2.posthemes.com/pos_junno/img/cms/2_1.jpg" alt="" 
-              className="group-hover/zoom:scale-110 duration-500 "/>
+              className="group-hover/zoom:scale-110 duration-500  "/>
             </div>
-            <div className="overflow-hidden group/zoom mr-4 mb-3 ">
+
+            <div className="overflow-hidden group/zoom h-slide2 mr-4 mb-3 col-span-1 sm:row-span-1">
               <img src="https://demo2.posthemes.com/pos_junno/img/cms/3_1.jpg" alt="" 
               className="group-hover/zoom:scale-110 duration-500 "/>
             </div>
-         </div>
-          {/* <div className="transform hover:scale-x-110 hover:scale-y-110 trasition duration-6000 ml-2 mr-6">
-              <img src="https://demo2.posthemes.com/pos_junno/img/cms/1_1.jpg" alt="" />
-          </div>
-          <div className="grid grid-cols-2 ml-2 mr-6">
-              <img src="https://demo2.posthemes.com/pos_junno/img/cms/2_1.jpg" alt="" 
-              className="transform hover:scale-x-110 hover:scale-y-110 trasition duration-6000 mr-3"/>
-              <img src="https://demo2.posthemes.com/pos_junno/img/cms/3_1.jpg" alt="" 
-              className="transform hover:scale-x-110 hover:scale-y-110 trasition duration-6000 ml-3"/>              
-          </div> */}
+                
       </div>
 
       </div>
@@ -181,18 +173,18 @@ export default function Home(props: IHomeProps) {
           title={product.title} image={product.image} rating={product.rating} price={product.price} 
           />          
         })}
-      </div> 
+      </div>  
 
-      <div className="grid grid-cols-3 w-screen h-screen mx-8 mb-14">
+      <div className="md:grid md:grid-cols-3 mx-8 mb-14">
          <div className="overflow-hidden group/zoom mb-5 relative mr-10">
             <img src="https://demo2.posthemes.com/pos_junno/img/cms/4_1.jpg" alt="giaynam" 
             className="group-hover/zoom:scale-110 duration-500" />
-            <button className="absolute top-64 right-40 border rounded bg-slate-100 px-3 py-3 hover:bg-red-500 ">Men's Shoes</button>
+            <button className="absolute top-60 right-36 border rounded bg-slate-100 px-3 py-3 hover:bg-red-500 ">Men's Shoes</button>
           </div>
          <div className="overflow-hidden group/zoom mb-5 relative mr-10">
             <img src="https://demo2.posthemes.com/pos_junno/img/cms/5_1.jpg" alt="giaynam" 
             className="group-hover/zoom:scale-110 duration-500" />
-            <button className="absolute top-64 right-40 border rounded bg-slate-100 px-3 py-3  ">Women's Shoes</button>
+            <button className="absolute top-60 right-36 border rounded bg-slate-100 px-3 py-3  ">Women's Shoes</button>
           </div>
 
           <div className="grid grid-rows-2">

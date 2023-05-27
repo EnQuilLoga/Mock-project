@@ -24,7 +24,7 @@ export default () => {
       slidesPerView={1} 
       loop={true}      
       pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
+      // scrollbar={{ draggable: true }}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
       autoplay={{
@@ -45,7 +45,7 @@ export default () => {
         </div>       
       </SwiperSlide>
       <SwiperSlide>
-        <div className="relative w-full h-slide1 bg-cover bg-[url('./assets/sample-2.jpg')]">
+        <div className="relative w-full h-slide bg-cover bg-[url('./assets/sample-2.jpg')]">
               <div className='absolute top-1/3 left-6 '>
                   <p className='text-white uppercase'>NEW ARRIVALS</p>
                   <h2 className='text-slate-100 text-4xl  '>Summer Sale</h2>

@@ -11,7 +11,10 @@ module.exports = {
       height: {
         slide: "490px",
         slide1: "470px  ",
-        slide2: "380px",
+        slide2: "350px",
+      },
+      weight: {
+        wslide: "700px",
       },
     },
   },
