@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { imgs } from "./data-small";
 import _ from "lodash";
 
 export default function ImageDisplay(props: any) {

@@ -21,4 +21,4 @@ export const tags = [
 export const star = _.range(5);
 
 
-
+export const des = [ 'Description', 'Product Details', 'Reviews']
