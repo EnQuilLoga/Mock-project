@@ -9,17 +9,12 @@ import DetailFifth from "../Latest/DetailFifth";
 import DetailFourth from "../Latest/DetailFourth";
 import DetailSecond from "../Latest/DetailSecond";
 
-
 export interface IHomeProps {}
 
 export default function Home(props: IHomeProps) {
   return (
     <div>
       <LatestBlogs />
-      {/* <DetailThird />
-      <DetailFifth />
-      <DetailFourth />
-      <DetailSecond /> */}
     </div>
   );
 }

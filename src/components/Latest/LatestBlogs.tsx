@@ -90,7 +90,7 @@ export default () => {
               <div className='pt-5'>
                     <div className='text-red-500 font-light'>Fashion</div>
                     <h4 className='py-2 capitalize font-bold hover:text-red-500'><Link to="Detail-fourth">This is fourth post for xipBlog</Link></h4>
-                    <div>May 29MO, 2023
+                    <div>
                       <p className='font-light'>
                           Posted by <span className='text-red-500'>Demo Posthemes</span> May 29MO, 2023
                       </p>
