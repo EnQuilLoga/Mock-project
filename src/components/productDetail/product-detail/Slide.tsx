@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ProductType } from "../product-list/Interface";
 import ProductItem from "../ProductItem";
 
-export default function Slide({ products, filtered, number }: any) {
+export default function Slide({ products, filtered }: any) {
   const [pageIndex, setPageIndex] = useState(0);
 
   const handleNext = () => {
@@ -29,7 +29,7 @@ export default function Slide({ products, filtered, number }: any) {
         <div className="flex justify-around items-center ">
           {products.length > 0 &&
             relatedProducts.map((product: ProductType) => (
-              <ProductItem key={product.id} product={product} number={number} />
+              <ProductItem key={product._id} product={product} />
             ))}
         </div>
 

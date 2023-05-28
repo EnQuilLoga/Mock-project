@@ -84,7 +84,7 @@ export default function ProductList() {
     : products;
 
   const filterCategory = selected
-    ? products.filter((product) => product.category === selected)
+    ? products.filter((product) => product.category.map((c) => c === selected))
     : products;
 
   const filtered = filterPrice.filter((product) =>
@@ -100,10 +100,9 @@ export default function ProductList() {
   const end = pageSize + start;
 
   const result = sorted.slice(start, end);
-
   return (
     <>
-      <div id="top" className="mx-5 flex items-start my-4">
+      <div id="top" className="mx-5 flex items-start my-4 text-[18px]">
         <div className="columns-1 w-1/4 mr-5">
           <Link
             to="#"

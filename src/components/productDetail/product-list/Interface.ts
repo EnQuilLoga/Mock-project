@@ -1,14 +1,37 @@
+// export interface ProductType {
+//   id: number;
+//   title: string;
+//   price: number;
+//   description: string;
+//   category: string;
+//   image: string;
+//   rating: {
+//     rate: number;
+//     count: number;
+//   };
+// }
 export interface ProductType {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
-  category: string;
-  image: string;
-  rating: {
-    rate: number;
-    count: number;
-  };
+
+     news:  boolean,
+     tag:  [],
+     images:  [],
+     _id: string, 
+     name: string,
+     brand: string, 
+     gender: string, 
+     category:  [
+       string
+       ],
+     price:  number,
+     is_in_inventory:  boolean,
+     items_left:  3,
+     imageURL:string,
+     slug: string,
+     featured:  number,
+     createdAt: string,
+     updatedAt: string,
+     __v:  number,
+     variation:  []
 }
 export interface ListProductType {
   data: ProductType[];
@@ -73,12 +96,9 @@ export interface SortType {
 
 export interface DetailProductType {
   data: ProductType[];
-  number: number;
-  discount: number;
 }
 export interface ListProductDetailType {
   data: ProductType[];
-  number: number;
 }
 export interface PaginationType {
   pageIndex: number;

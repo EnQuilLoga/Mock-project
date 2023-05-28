@@ -24,9 +24,6 @@ export default function ListProduct({
   onSort,
   setPageIndex,
 }: ListProductType) {
-  const number = 10;
-  const discount = Number(number) / Number(100);
-
   return (
     <>
       <div className=" ">
@@ -49,9 +46,9 @@ export default function ListProduct({
         />
 
         {displayGridProduct ? (
-          <DetailProduct data={data} number={number} discount={discount} />
+          <DetailProduct data={data} />
         ) : (
-          <ListProductDetail data={data} number={number} />
+          <ListProductDetail data={data} />
         )}
         <Pagination
           pageIndex={pageIndex}

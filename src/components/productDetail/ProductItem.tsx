@@ -2,7 +2,7 @@ import { Link } from "react-scroll";
 import { star } from "./product-list/smallData";
 import { useNavigate } from "react-router-dom";
 
-export default function ProductItem({ product, number }: any) {
+export default function ProductItem({ product }: any) {
   const navigate = useNavigate();
 
   return (
@@ -14,18 +14,17 @@ export default function ProductItem({ product, number }: any) {
           duration={500}
           className=" pb-10 hover:cursor-pointer  "
           onClick={() => {
-            navigate(`/products/${product?.id}`);
+            navigate(`/products/${product?._id}`);
           }}
         >
           <div className="flex justify-between text-white text-[13px] ">
-            <div className="bg-green-800 px-1 rounded">- {number}%</div>
             <div className="bg-red-600 text-white px-1 rounded">New</div>
           </div>
           <div className="flex py-4 place-content-center">
             <img
               className="w-full h-44 object-contain object-center"
-              src={product?.image}
-              alt={product?.title}
+              src={product?.imageURL}
+              alt={product?.name}
             />
           </div>
         </Link>
@@ -33,10 +32,10 @@ export default function ProductItem({ product, number }: any) {
         <div
           className="hover:text-red-600 hover:cursor-pointer"
           onClick={() => {
-            navigate(`/products/${product?.id}`);
+            navigate(`/products/${product?._id}`);
           }}
         >
-          {product?.title.slice(0, 15)}
+          {product?.name}
         </div>
         <div className="">
           {star.map((s, i) => (
@@ -44,7 +43,7 @@ export default function ProductItem({ product, number }: any) {
           ))}
         </div>
         <div className="flex justify-between items-center">
-          <div>${product?.price}</div>
+          <div className="text-[20px]">${product?.price}</div>
           <div className={starWrapper}>
             <i className="fas fa-shopping-cart place-content-center"></i>
           </div>
