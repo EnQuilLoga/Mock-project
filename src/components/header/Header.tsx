@@ -13,11 +13,12 @@ import { IUserProfile } from "../../types/userProfile";
 export interface IHeaderProps {
   refresh: boolean;
   setRefresh: React.Dispatch<React.SetStateAction<boolean>>;
-  userProfile: IUserProfile | undefined;
 }
 
+// const getDataLocalStorage = (value, initialValue) => {};
+
 export default function Header(props: IHeaderProps) {
-  const { refresh, setRefresh, userProfile } = props;
+  const { refresh, setRefresh } = props;
   const [showMenu, setShowMenu] = useState<boolean>(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -33,15 +34,14 @@ export default function Header(props: IHeaderProps) {
     setAnchorEl(null);
   };
 
-  // Cảnh thêm Logout
   const handleLogout = () => {
     Cookies.remove("auth");
-    setRefresh(!refresh);
+    localStorage.removeItem("userInfo");
     navigate("/");
+    setRefresh(!refresh);
   };
 
-  // Cảnh test token cookie
-  console.log("Cookie: ", Cookies.get("auth"));
+  const dataUserInfo = localStorage.getItem("userInfo");
 
   return (
     <>
@@ -114,7 +114,9 @@ export default function Header(props: IHeaderProps) {
                           >
                             <i className="fas fa-user md:text-2xl group-hover:text-red-600"></i>
                           </Button>
-                          <div className="-ml-4">{userProfile && userProfile.lastName}</div>
+                          <div className="-ml-4">
+                            {dataUserInfo && JSON.parse(dataUserInfo).lastName}
+                          </div>
                           <Menu
                             id="basic-menu"
                             anchorEl={anchorEl}
