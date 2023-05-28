@@ -1,7 +1,8 @@
 import axios from "axios";
+import Cookies from "js-cookie";
 
 const axiosInstance = axios.create({
-  baseURL: "https://fakestoreapi.com/",
+  baseURL: `${process.env.REACT_APP_SERVER_URL}`,
 });
 
 // Add a request interceptor
@@ -9,7 +10,7 @@ axiosInstance.interceptors.request.use(
   function (config: any) {
     // Do something before request is sent - xử lý yêu cầu trước khi gửi đi
     config.headers = {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
+      Authorization: `Bearer ${Cookies.get("auth")}`,
       Accept: "application/json",
       "Content-Type": "application/x-www-form-urlencoded",
     };
