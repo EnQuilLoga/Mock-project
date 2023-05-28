@@ -16,7 +16,7 @@ function App() {
         <Route path="/react" element={<ReactForm />}></Route>
       </Routes>
       {/* <ProductDemo></ProductDemo> */}
-      <Footer />
+      {/* <Footer /> */}
       
     </div>
   );

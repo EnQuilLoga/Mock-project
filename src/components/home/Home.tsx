@@ -1,6 +1,8 @@
 import * as React from "react";
 import Swiper from "swiper";
 import Product1 from "../product-demo/Product1";
+import ImageBody from "./imageBody/imageBody";
+import ImageHeader from "./slide/imageHeader";
 import SlideHeaderHome from "./slide/slideHeaderHome";
 
 
@@ -130,77 +132,41 @@ const data=[{
 export default function Home(props: IHomeProps) {
   return (
     <div>
-      {/* <div> <h1 className="bg-violet-500">Home</h1></div> */}
+      
       <div className="my-6">
-      <SlideHeaderHome/>
-
-      <div className="md:grid md:grid-cols-4 mx-6 my-6">
-          
-            <div className="overflow-hidden group/zoom h-slide2 mr-4 col-span-2 sm:row-span-1 ">
-              <img src="https://demo2.posthemes.com/pos_junno/img/cms/1_1.jpg" alt="" 
-              className="group-hover/zoom:scale-110 duration-500 "/>
-            </div>
-          
-        
-            <div className="overflow-hidden group/zoomh h-slide2 mr-4 mb-3 col-span-1 sm:row-span-1">
-              <img src="https://demo2.posthemes.com/pos_junno/img/cms/2_1.jpg" alt="" 
-              className="group-hover/zoom:scale-110 duration-500  "/>
-            </div>
-
-            <div className="overflow-hidden group/zoom h-slide2 mr-4 mb-3 col-span-1 sm:row-span-1">
-              <img src="https://demo2.posthemes.com/pos_junno/img/cms/3_1.jpg" alt="" 
-              className="group-hover/zoom:scale-110 duration-500 "/>
-            </div>
-                
+      <SlideHeaderHome/>  
       </div>
 
+      <div>
+        <ImageHeader/>
       </div>
-      <div className="grid justify-items-center p-7 ">
-        <div className="grid justify-items-center ">
-          <h1 className="text-black font-black">Our Product</h1>
-          <p className="text-black font-light">Add our products to weekly line up</p>
+
+      <div>
+        <div className="grid justify-items-center p-7 ">
+          <div className="grid justify-items-center pb-3">
+            <h1 className="text-black font-black text-4xl pb-1 font-serif">Our Product</h1>
+            <p className="text-black font-light text-zinc-500 font-sans">Add our products to weekly line up</p>
+          </div>
+          <div className="">
+            <button className="bg-slate-50 py-2 px-4 mr-2 border rounded border-solid hover:border-red-500 hover:text-red-500">Women Shoes</button>
+            <button className="bg-slate-50 py-2 px-4 mr-2 border rounded border-solid hover:border-red-500 hover:text-red-500">Men Shoes</button>
+            <button className="bg-slate-50 py-2 px-4 mr-2 border rounded border-solid hover:border-red-500 hover:text-red-500">Casual Shoes</button>
+          </div>
         </div>
-        <div className="">
-        <button className="bg-slate-50 py-2 px-4 mr-2 border rounded border-solid hover:border-red-500 hover:text-red-500">Women Shoes</button>
-        <button className="bg-slate-50 py-2 px-4 mr-2 border rounded border-solid hover:border-red-500 hover:text-red-500">Men Shoes</button>
-        <button className="bg-slate-50 py-2 px-4 mr-2 border rounded border-solid hover:border-red-500 hover:text-red-500">Casual Shoes</button>
-        </div>
+      
+        <div className="grid grid-rows-2 grid-cols-5">
+          {data.map((product) => {
+            return  <Product1 
+            title={product.title} image={product.image} rating={product.rating} price={product.price} 
+            />          
+          })}
+        </div>  
       </div>
-      
-      <div className="grid grid-rows-2 grid-cols-5">
-        {data.map((product) => {
-          return  <Product1 
-          title={product.title} image={product.image} rating={product.rating} price={product.price} 
-          />          
-        })}
-      </div>  
 
-      <div className="md:grid md:grid-cols-3 mx-8 mb-14">
-         <div className="overflow-hidden group/zoom mb-5 relative mr-10">
-            <img src="https://demo2.posthemes.com/pos_junno/img/cms/4_1.jpg" alt="giaynam" 
-            className="group-hover/zoom:scale-110 duration-500" />
-            <button className="absolute top-60 right-36 border rounded bg-slate-100 px-3 py-3 hover:bg-red-500 ">Men's Shoes</button>
-          </div>
-         <div className="overflow-hidden group/zoom mb-5 relative mr-10">
-            <img src="https://demo2.posthemes.com/pos_junno/img/cms/5_1.jpg" alt="giaynam" 
-            className="group-hover/zoom:scale-110 duration-500" />
-            <button className="absolute top-60 right-36 border rounded bg-slate-100 px-3 py-3  ">Women's Shoes</button>
-          </div>
-
-          <div className="grid grid-rows-2">
-            <img src="https://demo2.posthemes.com/pos_junno/img/cms/6_1.jpg" alt="" />
-            <img src="https://demo2.posthemes.com/pos_junno/img/cms/7_1.jpg" alt="" />            
-          </div>
-         
+      <div>
+        <ImageBody/>
       </div>
-        
-    
 
-    
-      
-
-      
-     
     </div>
   );
 }
