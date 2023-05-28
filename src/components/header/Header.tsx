@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import junnoLogo from "../../assets/junno-logo.jpg";
-import { NavLink, useLocation, useParams } from "react-router-dom";
+import { NavLink, useLocation, useNavigate, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import bannerSubmenu from "../../assets/custom_banner_submenu.jpg";
 import NestedList from "./MenuNav";
@@ -20,6 +20,7 @@ export default function Header(props: IHeaderProps) {
   const { refresh, setRefresh, userProfile } = props;
   const [showMenu, setShowMenu] = useState<boolean>(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
@@ -36,6 +37,7 @@ export default function Header(props: IHeaderProps) {
   const handleLogout = () => {
     Cookies.remove("auth");
     setRefresh(!refresh);
+    navigate("/");
   };
 
   // Cảnh test token cookie
@@ -122,7 +124,9 @@ export default function Header(props: IHeaderProps) {
                               "aria-labelledby": "basic-button",
                             }}
                           >
-                            <MenuItem onClick={handleClose}>My account</MenuItem>
+                            <MenuItem>
+                              <Link to={"/user-info"}>Profile</Link>
+                            </MenuItem>
                             <MenuItem onClick={handleLogout}>Logout</MenuItem>
                           </Menu>
                         </>

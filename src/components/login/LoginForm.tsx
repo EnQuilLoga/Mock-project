@@ -3,12 +3,10 @@ import { IUser } from "../../types/userType";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axiosInstance from "../../api/axiosInstance";
-import tokenApi from "../../api/requestToken";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { Alert } from "@mui/material";
 import { IUserProfile } from "../../types/userProfile";
-import userApi from "../../api/userApi";
 
 export interface ILoginForm {
   refresh: boolean;
@@ -25,6 +23,7 @@ const LoginForm = (props: ILoginForm) => {
   } = useForm<IUser>({ mode: "onChange" });
   const { refresh, setRefresh, setUserProfile } = props;
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   const onSubmit = (data: any) => {
     console.log("data form: ", data);
@@ -48,7 +47,6 @@ const LoginForm = (props: ILoginForm) => {
     setShowPassword(!showPassword);
   };
 
-  const navigate = useNavigate();
   const handleTextClick = () => {
     navigate("/register"); // Redirect to the register component
   };

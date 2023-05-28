@@ -120,10 +120,10 @@ export default function Footer(props: IFooterProps) {
               </div>
               <div className="flex justify-center md:justify-normal">
                 <div className="mr-4">
-                  <img src={appStore} alt="App Store" />
+                  <img src={appStore} alt="App Store" className="cursor-pointer" />
                 </div>
                 <div>
-                  <img src={googlePlay} alt="Google Play" />
+                  <img src={googlePlay} alt="Google Play" className="cursor-pointer" />
                 </div>
               </div>
             </ul>
