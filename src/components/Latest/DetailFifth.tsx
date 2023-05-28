@@ -20,7 +20,7 @@ return (
                     Posted by <span className="">Demo Posthemes</span>
                 </p>
                 <p className="border-r-2 border-current px-2">
-                    May 06TH, 2020		
+                    May 29MO, 2023		
                 </p>
                 <p className="px-2 text-red-500">
                     Fashion
