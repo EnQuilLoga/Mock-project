@@ -11,6 +11,7 @@ import ImageHeader from "./slide/imageHeader";
 import Product1 from "../product-demo/Product1";
 import ImageBody from "./imageBody/imageBody";
 import Swiper from "swiper";
+import LatestBlogs from "../Latest/LatestBlogs";
 
 export interface IHomeProps {}
 
@@ -215,6 +216,7 @@ export default function Home(props: IHomeProps) {
 
       <div>
         <ImageBody />
+        <LatestBlogs />
       </div>
     </div>
   );
