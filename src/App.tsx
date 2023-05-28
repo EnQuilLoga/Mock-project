@@ -18,39 +18,19 @@ import DetailThird from "./components/Latest/DetailThird";
 
 function App() {
   const [refresh, setRefresh] = useState<boolean>(false);
-  const [userProfile, setUserProfile] = useState<IUserProfile>();
-
-  console.log("userProfile: ", userProfile);
-
-  // useEffect(() => (
-
-  // ), [refresh])
 
   return (
     <div className="App">
-      <Header
-        refresh={refresh}
-        setRefresh={setRefresh}
-        userProfile={userProfile}
-      />
+      <Header refresh={refresh} setRefresh={setRefresh} />
       <Routes>
         <Route path="/" element={<Home />}></Route>
 
         <Route
           path="/login"
-          element={
-            <LoginForm
-              refresh={refresh}
-              setRefresh={setRefresh}
-              setUserProfile={setUserProfile}
-            />
-          }
+          element={<LoginForm refresh={refresh} setRefresh={setRefresh} />}
         ></Route>
 
-        <Route
-          path="/user-info"
-          element={<Userinfo userProfile={userProfile} />}
-        ></Route>
+        <Route path="/user-info" element={<Userinfo />}></Route>
 
         <Route path="/register" element={<RegisterForm />}></Route>
 

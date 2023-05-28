@@ -2,9 +2,7 @@ import { useForm } from "react-hook-form";
 import { IUser } from "../../types/userType";
 import { IUserProfile } from "../../types/userProfile";
 
-export interface IUserinfo {
-  userProfile: IUserProfile | undefined;
-}
+export interface IUserinfo {}
 
 const Userinfo = (props: IUserinfo) => {
   const {
@@ -13,12 +11,12 @@ const Userinfo = (props: IUserinfo) => {
     watch,
     formState: { errors },
   } = useForm<IUser>({ mode: "onChange" });
-  const { userProfile } = props;
-  console.log("userProfile: ", userProfile);
 
   const onSubmit = (data: any) => {
     alert("Change Information successfully");
   };
+
+  const dataUserInfo = localStorage.getItem("userInfo");
 
   return (
     <div className="mx-96 py-7">
@@ -34,7 +32,7 @@ const Userinfo = (props: IUserinfo) => {
               className="shadow appearance-none border rounded-2xl w-full py-2.5 px-3 mb-1 text-gray-700 leading-tight focus:outline-none"
               type="text"
               id="text"
-              value={userProfile && userProfile._id}
+              value={dataUserInfo && JSON.parse(dataUserInfo)._id}
               disabled
             />
 
@@ -46,7 +44,7 @@ const Userinfo = (props: IUserinfo) => {
               className="shadow appearance-none border rounded-2xl w-full py-2.5 px-3 mb-1 text-gray-700 leading-tight focus:outline-none"
               type="email"
               id="email"
-              value={userProfile && userProfile.email}
+              value={dataUserInfo && JSON.parse(dataUserInfo).email}
               disabled
             />
 
@@ -58,9 +56,10 @@ const Userinfo = (props: IUserinfo) => {
               className="shadow appearance-none border rounded-2xl w-full py-2.5 px-3 mb-1 text-gray-700 leading-tight focus:outline-none"
               type="text"
               id="username"
-              value={`${userProfile && userProfile.firstName} ${
-                userProfile && userProfile.lastName
-              }`}
+              value={
+                dataUserInfo &&
+                JSON.parse(dataUserInfo).firstName + JSON.parse(dataUserInfo).lastName
+              }
               disabled
             />
 

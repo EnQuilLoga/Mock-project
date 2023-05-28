@@ -11,7 +11,6 @@ import { IUserProfile } from "../../types/userProfile";
 export interface ILoginForm {
   refresh: boolean;
   setRefresh: React.Dispatch<React.SetStateAction<boolean>>;
-  setUserProfile: React.Dispatch<React.SetStateAction<IUserProfile | undefined>>;
 }
 
 const LoginForm = (props: ILoginForm) => {
@@ -21,7 +20,7 @@ const LoginForm = (props: ILoginForm) => {
     watch,
     formState: { errors },
   } = useForm<IUser>({ mode: "onChange" });
-  const { refresh, setRefresh, setUserProfile } = props;
+  const { refresh, setRefresh } = props;
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
@@ -31,15 +30,14 @@ const LoginForm = (props: ILoginForm) => {
       .post(`${process.env.REACT_APP_SERVER_URL}/api/users/login`, data)
       .then((res: any) => {
         Cookies.set("auth", res.data.token);
-        // <Alert severity="success">Login Successfully!</Alert>;
-
-        // TEST HÀNG
-
         axios
           .get(`${process.env.REACT_APP_SERVER_URL}/api/users/profile/${res.data._id}`)
-          .then((response) => setUserProfile(response.data), localStorage.get(""));
-        setRefresh(!refresh);
+          .then((response) => {
+            const dataUserInfo = JSON.stringify(response.data);
+            localStorage.setItem("userInfo", dataUserInfo);
+          });
         navigate("/");
+        setRefresh(!refresh);
       })
       .catch((err: any) => {
         console.log(err);
