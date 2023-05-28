@@ -1,17 +1,4 @@
-// export interface ProductType {
-//   id: number;
-//   title: string;
-//   price: number;
-//   description: string;
-//   category: string;
-//   image: string;
-//   rating: {
-//     rate: number;
-//     count: number;
-//   };
-// }
 export interface ProductType {
-
      news:  boolean,
      tag:  [],
      images:  [],
@@ -33,6 +20,8 @@ export interface ProductType {
      __v:  number,
      variation:  []
 }
+
+
 export interface ListProductType {
   data: ProductType[];
   totalPages: number;

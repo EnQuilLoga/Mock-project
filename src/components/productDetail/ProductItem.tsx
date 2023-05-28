@@ -1,9 +1,23 @@
 import { Link } from "react-scroll";
 import { star } from "./product-list/smallData";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../call-api/reducer";
+import { getCurrentProduct } from "../../call-api/productSlice";
 
 export default function ProductItem({ product }: any) {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [p, setp] = useState({});
+
+  const item = localStorage.getItem("currentProduct");
+  const product3 = item !== null ? JSON.parse(item) : {};
+
+  // console.log(product3);
+  // console.log(p);
+
+  localStorage.setItem("currentProduct", JSON.stringify(p));
 
   return (
     <>
@@ -14,6 +28,7 @@ export default function ProductItem({ product }: any) {
           duration={500}
           className=" pb-10 hover:cursor-pointer  "
           onClick={() => {
+            setp(product);
             navigate(`/products/${product?._id}`);
           }}
         >
@@ -32,6 +47,7 @@ export default function ProductItem({ product }: any) {
         <div
           className="hover:text-red-600 hover:cursor-pointer"
           onClick={() => {
+            setp(product);
             navigate(`/products/${product?._id}`);
           }}
         >

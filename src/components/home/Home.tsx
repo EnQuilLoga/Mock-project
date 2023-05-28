@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../call-api/reducer";
 import { getProductFetch } from "../../call-api/productSlice";
 import { useEffect } from "react";
+import { fakeData } from "../productDetail/product-list/smallData";
 
 export interface IHomeProps {}
 

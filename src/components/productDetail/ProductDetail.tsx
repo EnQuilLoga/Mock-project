@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { RootState } from "../../call-api/reducer";
@@ -9,14 +9,20 @@ import Modal from "./product-detail/ReviewModal";
 import Security from "./product-detail/Security";
 import SocialMedia from "./product-detail/SocialMedia";
 import ImageDisplay from "./product-detail/ImageDisplay";
-import { des, star } from "./product-list/smallData";
+import { des, fakeData, star } from "./product-list/smallData";
 import Slide from "./product-detail/Slide";
 import { ProductType } from "./product-list/Interface";
 import { Link } from "react-scroll";
 
+const local = localStorage.getItem("currentProduct");
+localStorage.setItem("currentProduct", JSON.stringify(fakeData));
+console.log(fakeData);
+
 export default function ProductDetail() {
-  const param = useParams();
   const { products } = useSelector((state: RootState) => state.products);
+
+  const item = localStorage.getItem("currentProduct");
+  const currentProduct = item !== null ? JSON.parse(item) : {};
 
   const [displayReview, setDisplayReview] = useState(false);
   const [displayDefaultDes, setDisplayDefaultDes] = useState(true);
@@ -33,8 +39,6 @@ export default function ProductDetail() {
   ]);
 
   const [reviewCount, setReviewCount] = useState(0);
-
-  const currentProduct = products?.find((product) => product._id === param.id);
 
   const youMightAlsoLike = products?.filter(
     (p: ProductType) => p.category === currentProduct?.category

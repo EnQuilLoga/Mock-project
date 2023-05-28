@@ -9,12 +9,14 @@ import { ProductType } from "../components/productDetail/product-list/Interface"
     isLoading: boolean;
     error: SerializedError | null;
     products: ProductType[];
-  }
+    currentProduct: ProductType;
+}
   
   const initialState:ProductState = {
     isLoading: false,
     error: null,
     products: [],
+    currentProduct: {} as ProductType,
   };
   
   const productSlice = createSlice({
@@ -31,11 +33,15 @@ import { ProductType } from "../components/productDetail/product-list/Interface"
       getProductFailure: (state) => {
         state.isLoading = false;
         state.error = new Error();
-      }
+      } ,
+      getCurrentProduct: (state, action: PayloadAction<{ product: ProductType}>) => {
+        state.currentProduct = action.payload.product
+      },
+
     },
     
   });
-  export const {   getProductFetch, getProductSuccess, getProductFailure  } = productSlice.actions;
+  export const {   getProductFetch, getProductSuccess, getProductFailure, getCurrentProduct  } = productSlice.actions;
   
    export default productSlice.reducer;
   

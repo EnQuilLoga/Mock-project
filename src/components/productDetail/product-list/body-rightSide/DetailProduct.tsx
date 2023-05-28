@@ -1,10 +1,21 @@
 import { star } from "../smallData";
 import { DetailProductType } from "../Interface";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getCurrentProduct } from "../../../../call-api/productSlice";
+import { RootState } from "../../../../call-api/reducer";
 
 export default function DetailProduct({ data }: DetailProductType) {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  // const { currentProduct } = useSelector((state: RootState) => state.products);
+  const [currentProduct, setCurrentProduct] = useState({});
 
+  const item = localStorage.getItem("currentProduct");
+  // const product = item !== null ? JSON.parse(item) : {};
+
+  localStorage.setItem("currentProduct", JSON.stringify(currentProduct));
   return (
     <>
       <div className=" p-10 ">
@@ -17,6 +28,7 @@ export default function DetailProduct({ data }: DetailProductType) {
               <div
                 className=" pb-10 mr-8 relative hover:cursor-pointer "
                 onClick={() => {
+                  setCurrentProduct(product);
                   navigate(`/products/${product?._id}`);
                 }}
               >
@@ -46,6 +58,7 @@ export default function DetailProduct({ data }: DetailProductType) {
                 <div
                   className="hover:text-red-600 hover:cursor-pointer text-[20px]"
                   onClick={() => {
+                    setCurrentProduct(product);
                     navigate(`/products/${product?._id}`);
                   }}
                 >

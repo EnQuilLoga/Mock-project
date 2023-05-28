@@ -3,7 +3,7 @@ import _ from "lodash";
 import React, { useEffect, useState } from "react";
 import { RootState } from "../../call-api/reducer";
 import ListProduct from "./product-list/ListProduct";
-import { tags } from "./product-list/smallData";
+import { fakeData, tags } from "./product-list/smallData";
 import {
   renderCategoryFilter,
   renderPriceFilter,
@@ -11,6 +11,10 @@ import {
 } from "./product-list/FunctionFilter";
 import { Link } from "react-router-dom";
 import { getProductFetch } from "../../call-api/productSlice";
+
+const local = localStorage.getItem("currentProduct");
+localStorage.setItem("currentProduct", JSON.stringify(fakeData));
+console.log(fakeData);
 
 export default function ProductList() {
   const dispatch = useDispatch();
@@ -92,7 +96,7 @@ export default function ProductList() {
   );
   const sorted = _.orderBy(filtered, [sortColumn], [sortOrder]);
 
-  const pageSize = 4;
+  const pageSize = 12;
   const totalPages =
     Math.floor(sorted.length / pageSize) +
     (sorted.length % pageSize === 0 ? 0 : 1);
