@@ -33,9 +33,11 @@ const LoginForm = (props: ILoginForm) => {
         Cookies.set("auth", res.data.token);
         // <Alert severity="success">Login Successfully!</Alert>;
 
+        // TEST HÀNG
+
         axios
           .get(`${process.env.REACT_APP_SERVER_URL}/api/users/profile/${res.data._id}`)
-          .then((response) => setUserProfile(response.data));
+          .then((response) => setUserProfile(response.data), localStorage.get(""));
         setRefresh(!refresh);
         navigate("/");
       })
