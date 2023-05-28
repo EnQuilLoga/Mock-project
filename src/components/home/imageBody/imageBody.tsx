@@ -1,6 +1,6 @@
 export default () => {
     return(
-        <div>
+        <div className="mb-5">
             <div className="md:grid md:grid-cols-3 mx-8 mb-14 ">
                 <div className="overflow-hidden group/zoom mb-5 relative mr-10 ">
                     <img src="https://demo2.posthemes.com/pos_junno/img/cms/4_1.jpg" alt="giaynam" 
