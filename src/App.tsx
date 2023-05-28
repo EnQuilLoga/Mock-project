@@ -10,7 +10,6 @@ import ContactUs from "./components/contact/ContactUs";
 import AboutUs from "./components/contact/AboutUs";
 import Userinfo from "./components/user-Information/Userinfo";
 import ProductList from "./components/productDetail/ProductList";
-import Cookies from "js-cookie";
 import { IUserProfile } from "./types/userProfile";
 
 function App() {
@@ -25,14 +24,22 @@ function App() {
 
   return (
     <div className="App">
-      <Header refresh={refresh} setRefresh={setRefresh} userProfile={userProfile} />
+      <Header
+        refresh={refresh}
+        setRefresh={setRefresh}
+        userProfile={userProfile}
+      />
       <Routes>
         <Route path="/" element={<Home />}></Route>
 
         <Route
           path="/login"
           element={
-            <LoginForm refresh={refresh} setRefresh={setRefresh} setUserProfile={setUserProfile} />
+            <LoginForm
+              refresh={refresh}
+              setRefresh={setRefresh}
+              setUserProfile={setUserProfile}
+            />
           }
         ></Route>
 
@@ -48,6 +55,7 @@ function App() {
 
         <Route path="/user-info" element={<Userinfo />} />
       </Routes>
+      {/* <ProductDemo></ProductDemo> */}
       <Footer />
     </div>
   );
