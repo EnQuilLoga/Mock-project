@@ -145,7 +145,7 @@ export default function Home(props: IHomeProps) {
         <div className="grid justify-items-center p-7 ">
           <div className="grid justify-items-center pb-3">
             <h1 className="text-black font-black text-4xl pb-1 font-serif">Our Product</h1>
-            <p className="text-black font-light text-zinc-500 font-sans">Add our products to weekly line up</p>
+            <p className=" font-light text-zinc-500 font-sans">Add our products to weekly line up</p>
           </div>
           <div className="">
             <button className="bg-slate-50 py-2 px-4 mr-2 border rounded border-solid hover:border-red-500 hover:text-red-500">Women Shoes</button>
