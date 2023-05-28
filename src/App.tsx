@@ -43,7 +43,7 @@ function App() {
           }
         ></Route>
 
-        <Route path="/user-info" element={<Userinfo />}></Route>
+        <Route path="/user-info" element={<Userinfo userProfile={userProfile} />}></Route>
 
         <Route path="/register" element={<RegisterForm />}></Route>
 
@@ -52,8 +52,6 @@ function App() {
 
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/about-us" element={<AboutUs />} />
-
-        <Route path="/user-info" element={<Userinfo />} />
       </Routes>
       {/* <ProductDemo></ProductDemo> */}
       <Footer />

@@ -1,13 +1,20 @@
 import { useForm } from "react-hook-form";
 import { IUser } from "../../types/userType";
+import { IUserProfile } from "../../types/userProfile";
 
-const Userinfo = () => {
+export interface IUserinfo {
+  userProfile: IUserProfile | undefined;
+}
+
+const Userinfo = (props: IUserinfo) => {
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm<IUser>({ mode: "onChange" });
+  const { userProfile } = props;
+  console.log("userProfile: ", userProfile);
 
   const onSubmit = (data: any) => {
     alert("Change Information successfully");
@@ -20,6 +27,17 @@ const Userinfo = () => {
       <div className="">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div>
+            <label className="block uppercase text-sm font-bold text-gray-700 my-2 tracking-wide">
+              ID
+            </label>
+            <input
+              className="shadow appearance-none border rounded-2xl w-full py-2.5 px-3 mb-1 text-gray-700 leading-tight focus:outline-none"
+              type="text"
+              id="text"
+              value={userProfile && userProfile._id}
+              disabled
+            />
+
             {/* Email  */}
             <label className="block uppercase text-sm font-bold text-gray-700 my-2 tracking-wide">
               Email
@@ -28,8 +46,7 @@ const Userinfo = () => {
               className="shadow appearance-none border rounded-2xl w-full py-2.5 px-3 mb-1 text-gray-700 leading-tight focus:outline-none"
               type="email"
               id="email"
-              placeholder="nguyenquoclong11@gmail.com"
-              {...register("email", {})}
+              value={userProfile && userProfile.email}
               disabled
             />
 
@@ -41,8 +58,9 @@ const Userinfo = () => {
               className="shadow appearance-none border rounded-2xl w-full py-2.5 px-3 mb-1 text-gray-700 leading-tight focus:outline-none"
               type="text"
               id="username"
-              value={"Enquilloga"}
-              {...register("username", {})}
+              value={`${userProfile && userProfile.firstName} ${
+                userProfile && userProfile.lastName
+              }`}
               disabled
             />
 
@@ -55,89 +73,8 @@ const Userinfo = () => {
               type={"password"}
               id="password"
               placeholder="********"
-              {...register("password", {})}
               disabled
             />
-
-            {/*Firstname */}
-            <label className=" uppercase text-sm font-bold text-gray-700 my-2 tracking-wide">
-              First Name
-            </label>
-            <input
-              className="shadow appearance-none border rounded-2xl w-full py-2.5 px-3 mb-1 text-gray-700 leading-tight focus:outline-none"
-              type="text"
-              id="firstName"
-              placeholder="Long"
-              {...register("name.firstname", {})}
-              disabled
-            />
-
-            {/* Lastname */}
-            <label className="block uppercase text-sm font-bold text-gray-700 my-2 tracking-wide">
-              Last Name
-            </label>
-            <input
-              className="shadow appearance-none border rounded-2xl w-full py-2.5 px-3 mb-1 text-gray-700 leading-tight focus:outline-none"
-              type="text"
-              id="lastName"
-              placeholder="Nguyen"
-              {...register("name.lastname", {})}
-              disabled
-            />
-
-            {/* Phone Number  */}
-            <label className="block uppercase text-sm font-bold text-gray-700 my-2 tracking-wide">
-              Phone number
-            </label>
-            <input
-              className="shadow appearance-none border rounded-2xl w-full py-2.5 px-3 mb-1 text-gray-700 leading-tight focus:outline-none"
-              type="text"
-              id="phonenumber"
-              value="8411368688"
-              {...register("phone", {
-                required: true,
-                pattern: /^(84|0[3|5|7|8|9])+([0-9]{8})\b$/i,
-              })}
-            />
-            {errors?.phone?.type === "pattern" && (
-              <p className="text-red-500">Wrong phone number's template</p>
-            )}
-            {errors?.phone?.type === "required" && (
-              <p className="text-red-500">Phone number is required</p>
-            )}
-
-            {/* city */}
-            <label className="block uppercase text-sm font-bold text-gray-700 my-2 tracking-wide">
-              City
-            </label>
-            <input
-              className="shadow appearance-none border rounded-2xl w-full py-2.5 px-3 mb-1 text-gray-700 leading-tight focus:outline-none"
-              type="text"
-              id="city"
-              value="Hanoi"
-              {...register("address.city", {})}
-            />
-
-            {/* street */}
-            <label className="block uppercase text-sm font-bold text-gray-700 my-2 tracking-wide">
-              Street
-            </label>
-            <input
-              className="shadow appearance-none border rounded-2xl w-full py-2.5 px-3 mb-1 text-gray-700 leading-tight focus:outline-none"
-              type="text"
-              id="street"
-              value="Duy Tan"
-              {...register("address.street", {})}
-            />
-
-            <button
-              type="submit"
-              className='bg-indigo-500 text-gray-100 text-2xl p-3 mt-12 mb-24 w-full rounded-full tracking-wide
-                    font-semibold focus:outline-none focus:shadow-outline hover:bg-indigo-600
-                    shadow-lg"'
-            >
-              Submit
-            </button>
           </div>
         </form>
       </div>
