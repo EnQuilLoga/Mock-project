@@ -1,9 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ProductType } from "../product-list/Interface";
 import ProductItem from "../ProductItem";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../../call-api/reducer";
+import { getProductFetch } from "../../../call-api/productSlice";
 
-export default function Slide({ products, filtered }: any) {
+export default function Slide({ filtered }: any) {
+  const { products } = useSelector((state: RootState) => state.products);
+  const dispatch = useDispatch();
+
   const [pageIndex, setPageIndex] = useState(0);
+
+  useEffect(() => {
+    dispatch(getProductFetch());
+  }, []);
 
   const handleNext = () => {
     if (pageIndex < totalPages - 1) setPageIndex(pageIndex + 1);

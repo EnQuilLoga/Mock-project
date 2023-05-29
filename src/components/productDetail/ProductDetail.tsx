@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { RootState } from "../../call-api/reducer";
 import ProductDes from "./product-detail/ProductDes";
@@ -13,21 +13,24 @@ import { des, fakeData, star } from "./product-list/smallData";
 import Slide from "./product-detail/Slide";
 import { ProductType } from "./product-list/Interface";
 import { Link } from "react-scroll";
-
-const local = localStorage.getItem("currentProduct");
-localStorage.setItem("currentProduct", JSON.stringify(fakeData));
-console.log(fakeData);
+import { getProductFetch } from "../../call-api/productSlice";
 
 export default function ProductDetail() {
   const { products } = useSelector((state: RootState) => state.products);
+  const dispatch = useDispatch();
 
-  const item = localStorage.getItem("currentProduct");
-  const currentProduct = item !== null ? JSON.parse(item) : {};
+  useEffect(() => {
+    dispatch(getProductFetch());
+  }, []);
+
+  const { id } = useParams();
+  const currentProduct = products.find((p) => p._id === id);
 
   const [displayReview, setDisplayReview] = useState(false);
   const [displayDefaultDes, setDisplayDefaultDes] = useState(true);
   const [displayDes, setDisplayDes] = useState("");
 
+  const [reviewCount, setReviewCount] = useState(0);
   const [customerReview, setCustomerReview] = useState([
     {
       customerName: "",
@@ -38,10 +41,8 @@ export default function ProductDetail() {
     },
   ]);
 
-  const [reviewCount, setReviewCount] = useState(0);
-
   const youMightAlsoLike = products?.filter(
-    (p: ProductType) => p.category === currentProduct?.category
+    (p: ProductType) => p?.category === currentProduct?.category
   );
 
   const otherProduct = products;
@@ -92,12 +93,8 @@ export default function ProductDetail() {
                 </span>
               </div>
             </div>
-            {/* <div>{currentProduct?.description}</div> */}
             <div className="my-5">
-              Available:{" "}
-              <span className="text-green-500">
-                {/* {currentProduct?.rating?.count} In Stock */}
-              </span>
+              Available: <span className="text-green-500"></span>
             </div>
             {/*  ADD TO CART */}
             <div className="flex flex-wrap">

@@ -12,6 +12,7 @@ export default function Modal(props: any) {
     setDisplayDes,
     setDisplayDefaultDes,
   } = props;
+
   const [customerTitleReview, setCustomerTitleReview] = useState(
     customerReview[0].customerTitleReview
   );
@@ -49,32 +50,41 @@ export default function Modal(props: any) {
 
   const handleSubmitReview = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
-    customerReview.push({
-      customerTitleReview,
-      customerName,
-      customerContentReview,
-      date,
-      countStar,
-    });
-
     if (
+      countStar === 0 ||
       customerTitleReview.trim() === "" ||
       customerName.trim() === "" ||
       customerContentReview.trim() === ""
     ) {
       setErrorCustomerReview(true);
-    } else {
-      alert("Your Comment Is Submitted");
-      setDisplayReview(false);
     }
-    setReviewCount(reviewCount + 1);
-    setDisplayDes("Reviews");
-    setDisplayDefaultDes(false);
+    if (
+      countStar === 0 &&
+      customerTitleReview.trim() !== "" &&
+      customerName.trim() !== "" &&
+      customerContentReview.trim() !== ""
+    ) {
+      alert("Your Comment Is Submitted");
+      setCustomerReview((pre: any) => [
+        ...pre,
+        {
+          customerTitleReview,
+          customerName,
+          customerContentReview,
+          date,
+          countStar,
+        },
+      ]);
+      setDisplayReview(false);
+      setReviewCount(reviewCount + 1);
+      setDisplayDes("Reviews");
+      setDisplayDefaultDes(false);
+    }
   };
 
   return (
     <>
-      <div className="text-[14px] w-full h-screen fixed top-0 left-0 bottom-0 right-0 bg-black bg-opacity-50 after:px-20 after:bg-stone-900 transform -translate-x- -translate-y-0 after:opacity-20 z-50">
+      <div className="text-[18px] w-full h-screen fixed top-0 left-0 bottom-0 right-0 bg-black bg-opacity-50 after:px-20 after:bg-stone-900 transform -translate-x- -translate-y-0 after:opacity-20 z-50">
         <div className="flex  justify-center items-center ">
           <div className=" w-1/2 h-full bg-white  py-2 px-5 my-3 border-2 border-stone-200 rounded">
             <div className="text-upperCase text-white bg-stone-800 p-3 w-full">
@@ -107,13 +117,8 @@ export default function Modal(props: any) {
                       ))}
                     </div>
                   </div>
-                  {/* Error */}
-                  {errorCustomerReview ? (
-                    <div>
-                      <p>Title is incorrect</p>
-                      <p>Comment is incorrect</p>
-                      <p>Customer name is incorrect</p>
-                    </div>
+                  {countStar === 0 && errorCustomerReview ? (
+                    <p className="text-red-600">Please rate the product</p>
                   ) : null}
                   <hr />
                   {/* Submit form */}
@@ -131,6 +136,12 @@ export default function Modal(props: any) {
                           type="text"
                           className="p-2 border-2 border-stone-200 w-full rounded my-2 focus:outline-stone-200"
                         />
+                        {customerTitleReview.trim() === "" &&
+                        errorCustomerReview ? (
+                          <p className="text-red-600">
+                            Title cannot be left blank
+                          </p>
+                        ) : null}
                       </div>
                       <div>
                         <label htmlFor="" className="font-bold">
@@ -147,6 +158,12 @@ export default function Modal(props: any) {
                           cols={10}
                           rows={2}
                         ></textarea>
+                        {customerTitleReview.trim() === "" &&
+                        errorCustomerReview ? (
+                          <p className="text-red-600">
+                            Title cannot be left blank
+                          </p>
+                        ) : null}
                       </div>
                       <div>
                         <label htmlFor="" className="font-bold">
@@ -158,6 +175,12 @@ export default function Modal(props: any) {
                           type="text"
                           className="p-2 border-2 border-stone-200 w-full rounded my-2  focus:outline-stone-200"
                         />
+                        {customerTitleReview.trim() === "" &&
+                        errorCustomerReview ? (
+                          <p className="text-red-600">
+                            Title cannot be left blank
+                          </p>
+                        ) : null}
                       </div>
                       <div className="text-left">* Required fields</div>
                       <div className="flex justify-end items-center mt-2">

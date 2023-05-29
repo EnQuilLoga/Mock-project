@@ -12,10 +12,6 @@ import {
 import { Link } from "react-router-dom";
 import { getProductFetch } from "../../call-api/productSlice";
 
-const local = localStorage.getItem("currentProduct");
-localStorage.setItem("currentProduct", JSON.stringify(fakeData));
-console.log(fakeData);
-
 export default function ProductList() {
   const dispatch = useDispatch();
 
@@ -88,7 +84,7 @@ export default function ProductList() {
     : products;
 
   const filterCategory = selected
-    ? products.filter((product) => product.category.map((c) => c === selected))
+    ? products.filter((product) => product.category == selected)
     : products;
 
   const filtered = filterPrice.filter((product) =>

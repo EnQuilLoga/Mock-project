@@ -41,7 +41,7 @@ export function renderCategoryFilter({
 }: renderCategoryFilterType) {
   return (
     <>
-      <div className="mb-8">
+      <div className="mb-8 text-center">
         <p className="text-[20px] ">Category</p>
         <ul className="list-none border border-stone-500 mt-1">
           {category.map((item, i) => (
@@ -52,7 +52,7 @@ export function renderCategoryFilter({
                 selected === item.value ? " selected" : ""
               }`} p-2 border-t-2 border-stone-300 cursor-pointer `}
             >
-              {item.value}
+              {item.label}
             </li>
           ))}
         </ul>

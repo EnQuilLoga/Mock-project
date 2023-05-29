@@ -1,14 +1,11 @@
 export interface ProductType {
-     news:  boolean,
-     tag:  [],
-     images:  [],
      _id: string, 
      name: string,
      brand: string, 
      gender: string, 
-     category:  [
+     category:  
        string
-       ],
+       ,
      price:  number,
      is_in_inventory:  boolean,
      items_left:  3,
@@ -17,8 +14,7 @@ export interface ProductType {
      featured:  number,
      createdAt: string,
      updatedAt: string,
-     __v:  number,
-     variation:  []
+   __v: number
 }
 
 

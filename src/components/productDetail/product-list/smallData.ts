@@ -7,7 +7,10 @@ export const sortProduct =  [
 ]
 
 export const category = [
-    {value: "CASUAL", name: 'Category'},
+    {label: "Casual",value: 'CASUAL', name: 'Category', },
+    {label: "Formal",value: 'FORMAL', name: 'Category'},
+    {label: "Running",value: 'RUNNING', name: 'Category'},
+    {label: "Football",value: 'FOOTBALL', name: 'Category'},
 ]
 
 
