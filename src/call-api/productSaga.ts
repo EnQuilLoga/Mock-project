@@ -6,7 +6,7 @@ import { getProductFailure, getProductSuccess } from './productSlice';
 
 function* toGetProductFetch(): any {
   try {
-    const response = yield call(() => axios.get(`${process.env.REACT_APP_SERVER_URL}`));
+    const response = yield call(() => axios.get(`${process.env.REACT_APP_SERVER_URL}/api/products`));
     const arrayProducts = response.data;
 
     yield put(getProductSuccess(arrayProducts.products));
