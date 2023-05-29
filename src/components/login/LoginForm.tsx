@@ -34,12 +34,16 @@ const LoginForm = (props: ILoginForm) => {
       .then((res: any) => {
         Cookies.set("auth", res.data.token);
         axios
-          .get(`${process.env.REACT_APP_SERVER_URL}/api/users/profile/${res.data._id}`)
+          .get(
+            `${process.env.REACT_APP_SERVER_URL}/api/users/profile/${res.data._id}`
+          )
           .then((response) => {
-            const dataUserInfo = JSON.stringify(response.data);
-            localStorage.setItem("userInfo", dataUserInfo);
+            if (response.status === 200) {
+              navigate("/");
+              const dataUserInfo = JSON.stringify(response.data);
+              localStorage.setItem("userInfo", dataUserInfo);
+            }
           });
-        navigate("/");
         setRefresh(!refresh);
       })
       .catch((err: any) => {
@@ -58,15 +62,21 @@ const LoginForm = (props: ILoginForm) => {
     <>
       <div className="bg-indigo-700 bg-opacity-25">
         <div className="px-auto py-10">
-          <h2 className="text-center text-7xl text-indigo-900 font-semibold  ">Sign in to Junno</h2>
+          <h2 className="text-center text-7xl text-indigo-900 font-semibold  ">
+            Sign in to Junno
+          </h2>
           <h3 className="text-center text-3xl text-indigo-800 font-semibold pt-4">
             Welcome to Junno
           </h3>
           <h3 className="text-center text-xl text-indigo-800 font-semibold ">
-            Get free shipping, discount vouchers and members only products when you’re member
+            Get free shipping, discount vouchers and members only products when
+            you’re member
           </h3>
           <div className="mt-12 flex justify-center">
-            <form className="w-full max-w-xl " onSubmit={handleSubmit(onSubmit)}>
+            <form
+              className="w-full max-w-xl "
+              onSubmit={handleSubmit(onSubmit)}
+            >
               <div className="w-full md:w-auto px-3 mb-6 md:mb-0">
                 {/* username */}
                 <label className="block uppercase text-sm font-bold text-gray-700 my-2 tracking-wide">
@@ -83,7 +93,9 @@ const LoginForm = (props: ILoginForm) => {
                   })}
                 />
                 {errors?.email?.type === "pattern" && (
-                  <p className="text-red-500">Please write correct email address</p>
+                  <p className="text-red-500">
+                    Please write correct email address
+                  </p>
                 )}
                 {errors?.email?.type === "required" && (
                   <p className="text-red-500">Email is required</p>
@@ -106,8 +118,9 @@ const LoginForm = (props: ILoginForm) => {
                 />
                 {errors?.password?.type === "pattern" && (
                   <p className="text-red-500">
-                    Your password must contains at least 8 characters, including at least one
-                    number, uppercase letters and special characters
+                    Your password must contains at least 8 characters, including
+                    at least one number, uppercase letters and special
+                    characters
                   </p>
                 )}
                 {errors?.password?.type === "required" && (

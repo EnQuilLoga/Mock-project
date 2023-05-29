@@ -17,7 +17,8 @@ export default () => {
       <div className="my-8 text-center">
         <h2 className="font-bold text-3xl font-sans">Latest Blogs</h2>
         <p className="font-light mt-3">
-          Present posts in a best way to highlight interesting moments of your blog.
+          Present posts in a best way to highlight interesting moments of your
+          blog.
         </p>
       </div>
 
@@ -51,7 +52,9 @@ export default () => {
                 </h4>
                 <div>
                   <p className="font-light">
-                    Posted by <span className="text-red-500">Demo Posthemes</span> May 29MO, 2023
+                    Posted by{" "}
+                    <span className="text-red-500">Demo Posthemes</span> May
+                    29MO, 2023
                   </p>
                 </div>
               </div>
@@ -71,11 +74,15 @@ export default () => {
               <div className="pt-5">
                 <div className="text-red-500 font-light">Fashion</div>
                 <h4 className="py-2 capitalize font-bold hover:text-red-500">
-                  <Link to="Detail-second">This is secound post for xipBlog</Link>
+                  <Link to="Detail-second">
+                    This is secound post for xipBlog
+                  </Link>
                 </h4>
                 <div>
                   <p className="font-light">
-                    Posted by <span className="text-red-500">Demo Posthemes</span> May 29MO, 2023
+                    Posted by{" "}
+                    <span className="text-red-500">Demo Posthemes</span> May
+                    29MO, 2023
                   </p>
                 </div>
               </div>
@@ -95,11 +102,15 @@ export default () => {
               <div className="pt-5">
                 <div className="text-red-500 font-light">Fashion</div>
                 <h4 className="py-2 capitalize font-bold hover:text-red-500">
-                  <Link to="Detail-fourth">This is fourth post for xipBlog</Link>
+                  <Link to="Detail-fourth">
+                    This is fourth post for xipBlog
+                  </Link>
                 </h4>
                 <div>
                   <p className="font-light">
-                    Posted by <span className="text-red-500">Demo Posthemes</span> May 29MO, 2023
+                    Posted by{" "}
+                    <span className="text-red-500">Demo Posthemes</span> May
+                    29MO, 2023
                   </p>
                 </div>
               </div>
@@ -123,7 +134,9 @@ export default () => {
                 </h4>
                 <div>
                   <p className="font-light">
-                    Posted by <span className="text-red-500">Demo Posthemes</span> May 29MO, 2023
+                    Posted by{" "}
+                    <span className="text-red-500">Demo Posthemes</span> May
+                    29MO, 2023
                   </p>
                 </div>
               </div>
@@ -147,7 +160,9 @@ export default () => {
                 </h4>
                 <div>
                   <p className="font-light">
-                    Posted by <span className="text-red-500">Demo Posthemes</span> May 29MO, 2023
+                    Posted by{" "}
+                    <span className="text-red-500">Demo Posthemes</span> May
+                    29MO, 2023
                   </p>
                 </div>
               </div>
@@ -168,11 +183,15 @@ export default () => {
               <div className="pt-5">
                 <div className="text-red-500 font-light">Fashion</div>
                 <h4 className="py-2 capitalize font-bold hover:text-red-500">
-                  <Link to="Detail-second">This is secound post for xipBlog</Link>
+                  <Link to="Detail-second">
+                    This is secound post for xipBlog
+                  </Link>
                 </h4>
                 <div>
                   <p className="font-light">
-                    Posted by <span className="text-red-500">Demo Posthemes</span> May 29MO, 2023
+                    Posted by{" "}
+                    <span className="text-red-500">Demo Posthemes</span> May
+                    29MO, 2023
                   </p>
                 </div>
               </div>

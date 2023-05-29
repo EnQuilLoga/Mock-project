@@ -10,7 +10,7 @@ import ContactUs from "./components/contact/ContactUs";
 import AboutUs from "./components/contact/AboutUs";
 import Userinfo from "./components/user-Information/Userinfo";
 import ProductList from "./components/productDetail/ProductList";
-import { IUserProfile } from "./types/userProfile";
+// import { IUserProfile } from "./types/userProfile";
 import DetailFifth from "./components/Latest/DetailFifth";
 import DetailFourth from "./components/Latest/DetailFourth";
 import DetailSecond from "./components/Latest/DetailSecond";
