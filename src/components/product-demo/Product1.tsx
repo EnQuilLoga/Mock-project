@@ -1,66 +1,57 @@
 import styled from "@emotion/styled/types/base";
 import * as React from "react";
 import { IProduct } from "../../types/productType";
+import { IProductNew } from "../../types/productsnew";
 
-// export interface IProduct1Props {
-//  nameProduct?: string;
-//  id?: number;
-//  imgProduct?: string;
-//  priceProduct?: number;
-//  description?:string;
-
-// }
-
-
-export default function Product1(props: Partial<IProduct>) {
-    
-
- return (
-    
-    <div className="mr-6 ml-9 group">
-        <div className="flex justify-between text-white text-[13px] ">
-            <div className="bg-green-800 px-1 rounded">%</div>
-            <div className="bg-red-600 text-white px-1 rounded">New</div>
-          </div>
-          <div className="flex py-4 place-content-center">
-            <img
-              className="w-full h-44 object-contain object-center"
-              src={props?.image}
-              alt={props.title}
-            />
-          </div>
-          
-        <div
-          className="hover:text-red-600 hover:cursor-pointer"          
-        >
-          {props?.title}
-        </div>
-        <div><p>{props.rating?.rate} <i className="fas fa-star text-yellow-200 "></i></p></div> 
-       
-        <div className="flex justify-between items-center">
-          <div>${props?.price}</div>
-          <div className={starWrapper}>
-            <i className="fas fa-shopping-cart place-content-center"></i>
-          </div>
-        </div>
-
-        <div className={iconContainer}>
-          <div className={icon}>
-            <i className="far fa-heart"></i>
-          </div>
-          <div className={`${icon} mx-4 `}>
-            <i className="fas fa-random"></i>
-          </div>
-          <div className={icon}>
-            <i className="fas fa-search"></i>
-          </div>
-        </div>
-    </div>  
- 
- );
-
+export interface IProduct1 {
+  product: IProductNew;
 }
 
+export default function Product1(props: IProduct1) {
+  const { product } = props;
+
+  return (
+    <div className="mr-6 ml-9 group">
+      <div className="flex justify-between text-white text-[13px] ">
+        <div className="bg-green-800 px-1 rounded">%</div>
+        <div className="bg-red-600 text-white px-1 rounded">New</div>
+      </div>
+      <div className="flex py-4 place-content-center">
+        <img
+          className="w-full h-44 object-contain object-center"
+          src={product.imageURL}
+          alt={product.name}
+        />
+      </div>
+
+      <div className="hover:text-red-600 hover:cursor-pointer">{product.name}</div>
+      <div>
+        <p>
+          {`hihi`} <i className="fas fa-star text-yellow-200 "></i>
+        </p>
+      </div>
+
+      <div className="flex justify-between items-center">
+        <div>${product.price}</div>
+        <div className={starWrapper}>
+          <i className="fas fa-shopping-cart place-content-center"></i>
+        </div>
+      </div>
+
+      <div className={iconContainer}>
+        <div className={icon}>
+          <i className="far fa-heart"></i>
+        </div>
+        <div className={`${icon} mx-4 `}>
+          <i className="fas fa-random"></i>
+        </div>
+        <div className={icon}>
+          <i className="fas fa-search"></i>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 const newProduct =
   "shadow hover:shadow-lg border-solid border-1 border-stone-200 mt-8 p-2 w-1/5 h-auto m-1 relative";

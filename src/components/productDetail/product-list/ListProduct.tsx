@@ -45,16 +45,8 @@ export default function ListProduct({
           setCloseCategory={setCloseCategory}
         />
 
-        {displayGridProduct ? (
-          <DetailProduct data={data} />
-        ) : (
-          <ListProductDetail data={data} />
-        )}
-        <Pagination
-          pageIndex={pageIndex}
-          totalPages={totalPages}
-          setPageIndex={setPageIndex}
-        />
+        {displayGridProduct ? <DetailProduct data={data} /> : <ListProductDetail data={data} />}
+        <Pagination pageIndex={pageIndex} totalPages={totalPages} setPageIndex={setPageIndex} />
       </div>
     </>
   );
