@@ -3,7 +3,7 @@ import _ from "lodash";
 import React, { useEffect, useState } from "react";
 import { RootState } from "../../call-api/reducer";
 import ListProduct from "./product-list/ListProduct";
-import { fakeData, tags } from "./product-list/smallData";
+import { tags } from "./product-list/smallData";
 import {
   renderCategoryFilter,
   renderPriceFilter,

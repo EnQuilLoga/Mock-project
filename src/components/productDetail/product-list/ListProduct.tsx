@@ -4,10 +4,6 @@ import DetailProduct from "./body-rightSide/DetailProduct";
 import ListProductDetail from "./body-rightSide/ListProductDetail";
 import DisplayFilter from "./header-rightSide/DisplayFilter";
 import Pagination from "./body-rightSide/Pagination";
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../../call-api/reducer";
-import { getCurrentProduct } from "../../../call-api/productSlice";
 
 export default function ListProduct({
   data,

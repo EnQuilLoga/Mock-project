@@ -1,10 +1,6 @@
 import { Link } from "react-scroll";
 import { star } from "./product-list/smallData";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../call-api/reducer";
-import { getCurrentProduct } from "../../call-api/productSlice";
 
 export default function ProductItem({ product }: any) {
   const navigate = useNavigate();

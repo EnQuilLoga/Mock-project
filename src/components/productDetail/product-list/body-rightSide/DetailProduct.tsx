@@ -1,10 +1,6 @@
 import { star } from "../smallData";
 import { DetailProductType } from "../Interface";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getCurrentProduct } from "../../../../call-api/productSlice";
-import { RootState } from "../../../../call-api/reducer";
 
 export default function DetailProduct({ data }: DetailProductType) {
   const navigate = useNavigate();
