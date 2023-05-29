@@ -7,7 +7,11 @@ import axios from "axios";
 import Cookies from "js-cookie";
 import { Alert } from "@mui/material";
 import { IUserProfile } from "../../types/userProfile";
+import Snackbar, { SnackbarOrigin } from "@mui/material/Snackbar";
 
+export interface State extends SnackbarOrigin {
+  open: boolean;
+}
 export interface ILoginForm {
   refresh: boolean;
   setRefresh: React.Dispatch<React.SetStateAction<boolean>>;
@@ -25,7 +29,6 @@ const LoginForm = (props: ILoginForm) => {
   const navigate = useNavigate();
 
   const onSubmit = (data: any) => {
-    console.log("data form: ", data);
     axios
       .post(`${process.env.REACT_APP_SERVER_URL}/api/users/login`, data)
       .then((res: any) => {
@@ -80,7 +83,7 @@ const LoginForm = (props: ILoginForm) => {
                   })}
                 />
                 {errors?.email?.type === "pattern" && (
-                  <p className="text-red-500">Username only have "._%+-" special character</p>
+                  <p className="text-red-500">Please write correct email address</p>
                 )}
                 {errors?.email?.type === "required" && (
                   <p className="text-red-500">Email is required</p>

@@ -14,12 +14,12 @@ import Swiper from "swiper";
 import LatestBlogs from "../Latest/LatestBlogs";
 import { IProductNew } from "../../types/productsnew";
 import axios from "axios";
+import { Alert } from "@mui/material";
 export interface IHomeProps {}
 
 export default function Home(props: IHomeProps) {
   const dispatch = useDispatch();
   const [dataProduct, setDataProduct] = React.useState<IProductNew[]>();
-  console.log("dataProduct: ", dataProduct);
 
   const { isLoading, error, products } = useSelector((state: RootState) => state.products);
 
@@ -43,6 +43,7 @@ export default function Home(props: IHomeProps) {
       }
     } catch (error) {
       console.log("error: ", error);
+      alert(<Alert severity="error">Email hoặc Password không đúng!</Alert>);
     }
   };
 

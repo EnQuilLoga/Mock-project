@@ -154,8 +154,11 @@ export default function Header(props: IHeaderProps) {
                               "aria-labelledby": "basic-button",
                             }}
                           >
-                            <MenuItem onClick={handleClose}>
-                              <Link to={"/login"}>Login</Link>
+                            <MenuItem>
+                              <Link to={"/login"}>Sign In</Link>
+                            </MenuItem>
+                            <MenuItem>
+                              <Link to={"/register"}>Sign Up</Link>
                             </MenuItem>
                           </Menu>
                         </>
@@ -406,7 +409,6 @@ export default function Header(props: IHeaderProps) {
             <div className="flex">
               <input
                 type="text"
-                id="first_name"
                 className="border border-gray-300 text-gray-900 text-sm rounded-l-md block w-full p-2.5 outline-none"
                 placeholder="Enter your search key..."
               />

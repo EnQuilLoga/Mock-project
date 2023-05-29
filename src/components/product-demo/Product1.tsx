@@ -27,7 +27,11 @@ export default function Product1(props: IProduct1) {
       <div className="hover:text-red-600 hover:cursor-pointer">{product.name}</div>
       <div>
         <p>
-          {`hihi`} <i className="fas fa-star text-yellow-200 "></i>
+          <i className="fas fa-star text-yellow-200 "></i>
+          <i className="fas fa-star text-yellow-200 "></i>
+          <i className="fas fa-star text-yellow-200 "></i>
+          <i className="fas fa-star text-yellow-200 "></i>
+          <i className="fas fa-star text-yellow-200 "></i>
         </p>
       </div>
 
