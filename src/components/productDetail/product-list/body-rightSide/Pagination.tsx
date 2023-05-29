@@ -1,3 +1,4 @@
+import { Link } from "react-scroll";
 import { PaginationType } from "../Interface";
 
 export default function Pagination({
@@ -14,7 +15,10 @@ export default function Pagination({
     <>
       <div className="flex items-center justify-center mt-5">
         {pagination.map((number) => (
-          <div
+          <Link
+            to="top"
+            smooth={true}
+            duration={500}
             key={number}
             onClick={() => setPageIndex(number)}
             className={` ${
@@ -22,7 +26,7 @@ export default function Pagination({
             }  py-2 px-3  border-2 border-blue-500  cursor-pointer m-2 rounded`}
           >
             {number + 1}
-          </div>
+          </Link>
         ))}
       </div>
     </>
