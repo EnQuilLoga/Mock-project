@@ -7,7 +7,7 @@ export default function ImageDisplay(props: any) {
   return (
     <>
       <div className=" ">
-        <div className="bg-red-600 text-white  rounded text-[13px] p-2 w-12">
+        <div className="bg-red-600 text-white float-right   rounded text-[13px] p-2 w-12">
           New
         </div>
         <div className="flex  place-content-center hover:ease-in-out hover:scale-150 mb-12 cursor-pointer">

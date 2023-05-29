@@ -102,16 +102,16 @@ export default function ProductList() {
   const result = sorted.slice(start, end);
   return (
     <>
-      <div id="top" className="mx-5 flex items-start my-4 text-[18px]">
-        <div className="columns-1 w-1/4 mr-5">
+      <div id="top" className="mx-5 flex items-start my-4">
+        <div className="columns-1 w-1/6 mr-5">
           <Link
             to="#"
-            className="text-[22px] border-b-2 border-stone-200 mb-8 pb-5 mb-4 block"
+            className="text-[20px] border-b-2 border-stone-200 mb-8 pb-5 mb-4 block"
           >
             Wallets & Card Holders
           </Link>
           <div>
-            <p className=" text-[22px] border-b-2 border-stone-200 mb-8 pb-3">
+            <p className=" text-[20px] border-b-2 border-stone-200 mb-8 pb-3">
               Filter By
             </p>
             <div

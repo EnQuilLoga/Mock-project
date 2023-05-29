@@ -9,7 +9,7 @@ import Modal from "./product-detail/ReviewModal";
 import Security from "./product-detail/Security";
 import SocialMedia from "./product-detail/SocialMedia";
 import ImageDisplay from "./product-detail/ImageDisplay";
-import { des, fakeData, star } from "./product-list/smallData";
+import { des, star } from "./product-list/smallData";
 import Slide from "./product-detail/Slide";
 import { ProductType } from "./product-list/Interface";
 import { Link } from "react-scroll";
@@ -49,7 +49,7 @@ export default function ProductDetail() {
 
   return (
     <>
-      <div id="top" className=" text-[18px]">
+      <div id="top" className=" ">
         <div className="grid  sm:grid-cols-1 md:grid-cols-2  p-4 gap-4 ">
           {/* IMG */}
           <ImageDisplay currentProduct={currentProduct} />

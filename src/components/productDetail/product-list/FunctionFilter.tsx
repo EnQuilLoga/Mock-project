@@ -41,7 +41,7 @@ export function renderCategoryFilter({
 }: renderCategoryFilterType) {
   return (
     <>
-      <div className="mb-8 text-center">
+      <div className="mb-8">
         <p className="text-[20px] ">Category</p>
         <ul className="list-none border border-stone-500 mt-1">
           {category.map((item, i) => (

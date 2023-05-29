@@ -84,10 +84,10 @@ export default function Modal(props: any) {
 
   return (
     <>
-      <div className="text-[18px] w-full h-screen fixed top-0 left-0 bottom-0 right-0 bg-black bg-opacity-50 after:px-20 after:bg-stone-900 transform -translate-x- -translate-y-0 after:opacity-20 z-50">
+      <div className=" w-full text-[14px] h-screen fixed top-0 left-0 bottom-0 right-0 bg-black bg-opacity-50 after:px-20 after:bg-stone-900 transform -translate-x- -translate-y-0 after:opacity-20 z-50">
         <div className="flex  justify-center items-center ">
-          <div className=" w-1/2 h-full bg-white  py-2 px-5 my-3 border-2 border-stone-200 rounded">
-            <div className="text-upperCase text-white bg-stone-800 p-3 w-full">
+          <div className=" w-1/2 h-full bg-white  py-1 px-5 my-3 border-2 border-stone-200 rounded">
+            <div className="text-upperCase text-white bg-stone-800 p-2 w-full">
               Write your review
             </div>
             <div>
@@ -99,10 +99,10 @@ export default function Modal(props: any) {
                       src={currentProduct?.imageURL}
                     />
                   </div>
-                  <div className="text-[24px]">{currentProduct?.name}</div>
+                  <div className="">{currentProduct?.name}</div>
                 </div>
                 <div className=" w-1/2 pl-4">
-                  <div className="text-[22px]">Write your review</div>
+                  <div className="">Write your review</div>
                   <div className="flex justify-start items-center">
                     <div className="mr-2 font-bold">Quantity</div>
                     <div className=" my-1 mr-2">
