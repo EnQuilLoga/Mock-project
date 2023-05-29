@@ -3,28 +3,41 @@ import { IUser } from "../../types/userType";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axiosInstance from "../../api/axiosInstance";
-import tokenApi from "../../api/requestToken";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { Alert } from "@mui/material";
+import { IUserProfile } from "../../types/userProfile";
 
-const LoginForm = () => {
+export interface ILoginForm {
+  refresh: boolean;
+  setRefresh: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const LoginForm = (props: ILoginForm) => {
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm<IUser>({ mode: "onChange" });
+  const { refresh, setRefresh } = props;
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   const onSubmit = (data: any) => {
-    console.log(data);
+    console.log("data form: ", data);
     axios
       .post(`${process.env.REACT_APP_SERVER_URL}/api/users/login`, data)
       .then((res: any) => {
         Cookies.set("auth", res.data.token);
-        <Alert severity="success">Login Successfully!</Alert>;
+        axios
+          .get(`${process.env.REACT_APP_SERVER_URL}/api/users/profile/${res.data._id}`)
+          .then((response) => {
+            const dataUserInfo = JSON.stringify(response.data);
+            localStorage.setItem("userInfo", dataUserInfo);
+          });
         navigate("/");
+        setRefresh(!refresh);
       })
       .catch((err: any) => {
         console.log(err);
@@ -34,30 +47,23 @@ const LoginForm = () => {
     setShowPassword(!showPassword);
   };
 
-  const navigate = useNavigate();
   const handleTextClick = () => {
     navigate("/register"); // Redirect to the register component
   };
 
   return (
     <>
-      <div className="bg-indigo-700 bg-opacity-25 p-1 h-screen">
-        <div className="mt-20 px-96 ">
-          <h2 className="text-center text-7xl text-indigo-900 font-semibold  ">
-            Sign in to Junno
-          </h2>
+      <div className="bg-indigo-700 bg-opacity-25">
+        <div className="px-auto py-10">
+          <h2 className="text-center text-7xl text-indigo-900 font-semibold  ">Sign in to Junno</h2>
           <h3 className="text-center text-3xl text-indigo-800 font-semibold pt-4">
             Welcome to Junno
           </h3>
           <h3 className="text-center text-xl text-indigo-800 font-semibold ">
-            Get free shipping, discount vouchers and members only products when
-            you’re member
+            Get free shipping, discount vouchers and members only products when you’re member
           </h3>
           <div className="mt-12 flex justify-center">
-            <form
-              className="w-full max-w-xl "
-              onSubmit={handleSubmit(onSubmit)}
-            >
+            <form className="w-full max-w-xl " onSubmit={handleSubmit(onSubmit)}>
               <div className="w-full md:w-auto px-3 mb-6 md:mb-0">
                 {/* username */}
                 <label className="block uppercase text-sm font-bold text-gray-700 my-2 tracking-wide">
@@ -74,9 +80,7 @@ const LoginForm = () => {
                   })}
                 />
                 {errors?.email?.type === "pattern" && (
-                  <p className="text-red-500">
-                    Username only have "._%+-" special character
-                  </p>
+                  <p className="text-red-500">Username only have "._%+-" special character</p>
                 )}
                 {errors?.email?.type === "required" && (
                   <p className="text-red-500">Email is required</p>
@@ -99,9 +103,8 @@ const LoginForm = () => {
                 />
                 {errors?.password?.type === "pattern" && (
                   <p className="text-red-500">
-                    Your password must contains at least 8 characters, including
-                    at least one number, uppercase letters and special
-                    characters
+                    Your password must contains at least 8 characters, including at least one
+                    number, uppercase letters and special characters
                   </p>
                 )}
                 {errors?.password?.type === "required" && (

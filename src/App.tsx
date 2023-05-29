@@ -10,21 +10,25 @@ import ContactUs from "./components/contact/ContactUs";
 import AboutUs from "./components/contact/AboutUs";
 import Userinfo from "./components/user-Information/Userinfo";
 import ProductList from "./components/productDetail/ProductList";
+import { IUserProfile } from "./types/userProfile";
+import DetailFifth from "./components/Latest/DetailFifth";
+import DetailFourth from "./components/Latest/DetailFourth";
+import DetailSecond from "./components/Latest/DetailSecond";
+import DetailThird from "./components/Latest/DetailThird";
 
 function App() {
   const [refresh, setRefresh] = useState<boolean>(false);
 
-  // useEffect(() => (
-
-  // ), [])
-
   return (
     <div className="App">
-      <Header />
+      <Header refresh={refresh} setRefresh={setRefresh} />
       <Routes>
         <Route path="/" element={<Home />}></Route>
 
-        <Route path="/login" element={<LoginForm />}></Route>
+        <Route
+          path="/login"
+          element={<LoginForm refresh={refresh} setRefresh={setRefresh} />}
+        ></Route>
 
         <Route path="/user-info" element={<Userinfo />}></Route>
 
@@ -35,9 +39,12 @@ function App() {
 
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/about-us" element={<AboutUs />} />
-
-        <Route path="/user-info" element={<Userinfo />} />
+        <Route path="/Detail-fifth" element={<DetailFifth />} />
+        <Route path="/Detail-fourth" element={<DetailFourth />} />
+        <Route path="/Detail-second" element={<DetailSecond />} />
+        <Route path="/Detail-third" element={<DetailThird />} />
       </Routes>
+      {/* <ProductDemo></ProductDemo> */}
       <Footer />
     </div>
   );

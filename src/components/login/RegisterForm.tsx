@@ -24,10 +24,7 @@ const RegisterForm = () => {
       lastName: data.name.lastname,
     };
     axios
-      .post(
-        `${process.env.REACT_APP_SERVER_URL}/api/users/register`,
-        dataRegister
-      )
+      .post(`${process.env.REACT_APP_SERVER_URL}/api/users/register`, dataRegister)
       .then((res: any) => {
         Cookies.set("auth", res.data.token);
         <Alert severity="success">Register Successfully!</Alert>;
@@ -45,21 +42,15 @@ const RegisterForm = () => {
     <>
       <div className="bg-indigo-700 bg-opacity-25 p-1  ">
         <div className="mt-20 px-96 ">
-          <h2 className="text-center text-7xl text-indigo-900 font-semibold  ">
-            Register
-          </h2>
+          <h2 className="text-center text-7xl text-indigo-900 font-semibold  ">Register</h2>
           <h3 className="text-center text-3xl text-indigo-800 font-semibold pt-4">
             Welcome to Junno
           </h3>
           <h3 className="text-center text-xl text-indigo-800 font-semibold ">
-            Get free shipping, discount vouchers and members only products when
-            you’re member
+            Get free shipping, discount vouchers and members only products when you’re member
           </h3>
           <div className="mt-12 flex justify-center">
-            <form
-              className="w-full max-w-xl "
-              onSubmit={handleSubmit(onSubmit)}
-            >
+            <form className="w-full max-w-xl " onSubmit={handleSubmit(onSubmit)}>
               <div className="w-full md:w-auto px-3 mb-6 md:mb-0">
                 {/*Firstname */}
                 <label className=" uppercase text-sm font-bold text-gray-700 my-2 tracking-wide">
@@ -123,9 +114,7 @@ const RegisterForm = () => {
                   <p className="text-red-500">Email is required</p>
                 )}
                 {errors?.email?.type === "pattern" && (
-                  <p className="text-red-500">
-                    Please write correct email address
-                  </p>
+                  <p className="text-red-500">Please write correct email address</p>
                 )}
 
                 {/* Phone Number  */}
@@ -176,8 +165,8 @@ const RegisterForm = () => {
                 />
                 {errors?.password?.type === "pattern" && (
                   <p className="text-red-500">
-                    Your password must contains at least 8 characters, including
-                    at least one number, special characters
+                    Your password must contains at least 8 characters, including at least one
+                    number, special characters
                   </p>
                 )}
                 {errors?.password?.type === "required" && (
@@ -199,8 +188,7 @@ const RegisterForm = () => {
                       if (watch("password") !== val) {
                         return `${(
                           <p className="text-red-500">
-                            Your confirm password do not match with your
-                            password
+                            Your confirm password do not match with your password
                           </p>
                         )}`;
                       }
