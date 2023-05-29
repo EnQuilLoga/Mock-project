@@ -15,7 +15,7 @@ export default function GridAndBlockIcon({
 }: GridAndBlockIconType) {
   return (
     <>
-      <div className="flex justify-between items-center p-4 bg-red-100 ">
+      <div className="flex justify-between items-center p-4 bg-gray-100 ">
         <div>
           <i
             className={` ${
