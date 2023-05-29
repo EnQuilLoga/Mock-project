@@ -9,7 +9,7 @@ import Modal from "./product-detail/ReviewModal";
 import Security from "./product-detail/Security";
 import SocialMedia from "./product-detail/SocialMedia";
 import ImageDisplay from "./product-detail/ImageDisplay";
-import { des, fakeData, star } from "./product-list/smallData";
+import { des, star } from "./product-list/smallData";
 import Slide from "./product-detail/Slide";
 import { ProductType } from "./product-list/Interface";
 import { Link } from "react-scroll";
