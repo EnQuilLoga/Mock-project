@@ -7,7 +7,7 @@ export default function DetailProduct({ data }: DetailProductType) {
 
   return (
     <>
-      <div className=" p-10 ">
+      <div className=" p-10 my-10">
         {data.length > 0 &&
           data?.map((product) => (
             <div

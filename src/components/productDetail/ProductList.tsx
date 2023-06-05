@@ -84,7 +84,7 @@ export default function ProductList() {
     : products;
 
   const filterCategory = selected
-    ? products.filter((product) => product.category == selected)
+    ? products.filter((product) => product.category === selected)
     : products;
 
   const filtered = filterPrice.filter((product) =>

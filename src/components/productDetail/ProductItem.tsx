@@ -30,7 +30,7 @@ export default function ProductItem({ product }: any) {
         </Link>
 
         <div
-          className="hover:text-red-600 hover:cursor-pointer"
+          className="hover:text-red-600 hover:cursor-pointer h-10 mb-4"
           onClick={() => {
             navigate(`/products/${product?._id}`);
           }}
@@ -66,7 +66,7 @@ export default function ProductItem({ product }: any) {
 }
 
 const newProduct =
-  "shadow hover:shadow-lg border-solid border-1 border-stone-200 mt-8 p-2 w-1/5 h-auto m-1 relative";
+  "my-10  shadow hover:shadow-lg border-solid border-1 border-stone-200 mt-8 p-2 w-1/5 h-auto m-1 relative";
 
 const starWrapper =
   "flex justify-center items-center cursor-pointer w-10 h-10 hover:bg-red-700 bg-stone-200 text-stone-800 rounded-full hover:text-white";

@@ -37,7 +37,7 @@ export default function Modal(props: any) {
       d
         .toString()
         .slice(0, da - 1)
-        .replaceAll(" ", "/")
+        .replaceAll(" ", "-")
     );
 
     const updatedStars = [...stars];
@@ -59,7 +59,7 @@ export default function Modal(props: any) {
       setErrorCustomerReview(true);
     }
     if (
-      countStar === 0 &&
+      countStar !== 0 &&
       customerTitleReview.trim() !== "" &&
       customerName.trim() !== "" &&
       customerContentReview.trim() !== ""
